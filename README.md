@@ -1,5 +1,8 @@
 # WhatsApp Client API
 
+![GitHub Release](https://img.shields.io/github/v/release/ndiing/whatsapp-client)
+[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ndiing/whatsapp-client/total)](https://github.com/ndiing/whatsapp-client/releases)
+
 API sederhana yang membungkus Web WhatsApp dengan HTTP request. API ini dirancang untuk memberikan support bagi aplikasi yang belum mendukung socket dan event source secara langsung.
 
 ## Fitur
