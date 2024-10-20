@@ -12,6 +12,12 @@ API sederhana yang membungkus Web WhatsApp dengan HTTP request. API ini dirancan
 1. Download versi terbaru dari [releases](https://github.com/ndiing/whatsapp-client/releases)
 2. Install aplikasi yang sudah di-download
 
+## Setelah Instalasi
+Setelah aplikasi di-download dan di-install untuk pertama kali, aplikasi akan secara otomatis berjalan di tray menu. 
+
+- **Melihat Versi**: Hover pada ikon yang ada di tray untuk melihat versi yang sedang berjalan.
+- **Menutup Aplikasi**: Klik kanan pada ikon di tray dan pilih menu "Berhenti" untuk menutup aplikasi.
+
 ## Penggunaan
 <pre>
 Cukup kirim request HTTP untuk memanfaatkan fitur API ini.
@@ -21,12 +27,6 @@ Tidak memerlukan pengaturan socket atau event secara manual.
 Contoh request dapat ditemukan di file [`http/whatsapp.http`](http/whatsapp.http).
 
 **Tutorial atau cara penggunaan menyusul, sedang dalam pengembangan.**
-
-## Setelah Instalasi
-Setelah aplikasi di-download dan di-install untuk pertama kali, aplikasi akan secara otomatis berjalan di tray menu. 
-
-- **Melihat Versi**: Hover pada ikon yang ada di tray untuk melihat versi yang sedang berjalan.
-- **Menutup Aplikasi**: Klik kanan pada ikon di tray dan pilih menu "Berhenti" untuk menutup aplikasi.
 
 ## Konfigurasi
 Buka file `.env` untuk mengatur konfigurasi. File ini terletak di lokasi yang sama dengan `whatsapp-client.exe`.
