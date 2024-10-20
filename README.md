@@ -20,6 +20,8 @@ Tidak memerlukan pengaturan socket atau event secara manual.
 
 Contoh request dapat ditemukan di file [`http/whatsapp.http`](http/whatsapp.http).
 
+**Tutorial atau cara penggunaan menyusul, sedang dalam pengembangan.**
+
 ## Konfigurasi
 Buka file `.env` untuk mengatur konfigurasi. File ini terletak di lokasi yang sama dengan `whatsapp-client.exe`.
 
