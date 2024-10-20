@@ -1,0 +1,108 @@
+@_id=6281938064470
+
+### start
+GET http://localhost:2000/api/whatsapp/{{_id}}/start
+
+### stop
+GET http://localhost:2000/api/whatsapp/{{_id}}/stop
+
+
+
+
+
+
+### sendMessage
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
+
+{
+    "jid": "6281935155404@s.whatsapp.net",
+    "content": {
+        "text": "ini pesan ya"
+    }
+}
+
+### sendMessage
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
+
+{
+    "jid": "6281935155404@s.whatsapp.net",
+    "content": {
+        "location": {
+            "degreesLatitude": 24.121231,
+            "degreesLongitude": 55.1121221
+        }
+    }
+}
+
+
+
+
+
+
+### readMessages
+POST http://localhost:2000/api/whatsapp/{{_id}}/readMessages
+Content-Type: application/json
+
+{
+    "keys": [
+        {
+            "remoteJid": "6281935155404@s.whatsapp.net",
+            "fromMe": false,
+            "id": "3EB03DE1076F131759B0AA"
+        }
+    ]
+}
+
+### presenceSubscribe
+POST http://localhost:2000/api/whatsapp/{{_id}}/presenceSubscribe
+Content-Type: application/json
+
+{
+    "toJid": "6281935155404@s.whatsapp.net"
+}
+
+
+
+
+
+### sendPresenceUpdate
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
+Content-Type: application/json
+
+{
+    "type": "composing",
+    "toJid": "6281935155404@s.whatsapp.net"
+}
+
+### sendPresenceUpdate
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
+Content-Type: application/json
+
+{
+    "type": "paused",
+    "toJid": "6281935155404@s.whatsapp.net"
+}
+
+
+
+
+
+
+### loadMessages
+POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages
+Content-Type: application/json
+
+{
+    "jid": "6281935155404@s.whatsapp.net"
+}
+
+### loadMessage
+POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessage
+Content-Type: application/json
+
+{
+    "jid": "6281935155404@s.whatsapp.net", 
+    "id": "3EB0CA7B02C663A4098CAA"
+}

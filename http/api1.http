@@ -1,0 +1,47 @@
+### 1. POST / 
+POST http://localhost/api/api1/ 
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+}
+
+### 1.2 POST / 
+POST http://localhost/api/api1/ 
+Content-Type: application/x-www-form-urlencoded
+
+name=John Doe&email=john.doe@example.com
+
+### 2. GET /:id
+GET http://localhost/api/api1/123 
+Accept-Encoding: gzip, deflate
+Cookie: name1=value1; name2=value2; name3=value3
+
+### 2.2 GET /:id
+GET https://localhost/api/api1/123 
+Accept-Encoding: gzip, deflate
+Cookie: name1=value1; name2=value2; name3=value3
+
+### 3. GET /
+GET http://localhost/api/api1/ 
+
+### 4. PATCH /:id
+PATCH http://localhost/api/api1/123 
+Content-Type: application/json
+
+{
+    "email": "new.email@example.com"
+}
+
+### 5. PUT /:id
+PUT http://localhost/api/api1/123 
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.new@example.com"
+}
+
+### 6. DELETE /:id
+DELETE http://localhost/api/api1/123 
