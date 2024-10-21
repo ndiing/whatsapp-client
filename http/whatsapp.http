@@ -291,3 +291,36 @@ Content-Type: application/json
 {
     "jid": "{{jid}}@s.whatsapp.net"
 }
+
+### Untuk mengubah status profil Anda
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileStatus
+Content-Type: application/json
+
+{
+    "status": "Ada"
+}
+
+### Untuk mengubah nama profil Anda
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileName
+Content-Type: application/json
+
+{
+    "name": "Ndiing"
+}
+
+### Untuk mengubah nama profil Anda
+POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl
+Content-Type: application/json
+
+{
+    "jid":"{{jid}}@s.whatsapp.net"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl
+Content-Type: application/json
+
+{
+    "jid":"{{jid}}@s.whatsapp.net",
+    "type":"image"
+}
