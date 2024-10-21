@@ -1,21 +1,20 @@
 # WhatsApp Client
 
 [![GitHub Release](https://img.shields.io/github/v/release/ndiing/whatsapp-client)](https://github.com/ndiing/whatsapp-client/releases)
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ndiing/whatsapp-client/total)
-](https://github.com/ndiing/whatsapp-client/releases)
+[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ndiing/whatsapp-client/total)](https://github.com/ndiing/whatsapp-client/releases)
 
-`whatsapp-client` adalah sebuah library yang meng-wrap HTTP request dari API Web WhatsApp. Library ini dirancang untuk memenuhi kebutuhan aplikasi yang belum mendukung socket dan event source.
+`whatsapp-client` adalah sebuah library yang memudahkan kamu berkomunikasi dengan API Web WhatsApp. Library ini dibuat untuk aplikasi yang belum bisa menggunakan soket dan sumber acara.
 
-## Instal
+## Cara Instal
 
-- Download dari [halaman rilis WhatsApp Client](https://github.com/ndiing/whatsapp-client/releases)
-- Install
+1. **Download** dari [halaman rilis WhatsApp Client](https://github.com/ndiing/whatsapp-client/releases).
+2. **Install** aplikasi.
 
-Setelah diinstal, aplikasi akan dijalankan secara otomatis dan ditampilkan pada tray icon. Untuk melihat versi, kamu bisa hover pada icon, dan untuk menghentikan aplikasi, lakukan klik kanan lalu pilih "Berhenti".
+Setelah diinstal, aplikasi akan langsung berjalan dan muncul di ikon tray (pojok kanan bawah layar). Untuk melihat versi aplikasi, kamu bisa mengarahkan kursor ke ikon. Untuk menghentikan aplikasi, klik kanan pada ikon dan pilih "Berhenti".
 
-## Env
+## Pengaturan
 
-Pada folder `whatsapp-client`, sesuaikan konfigurasi file `.env` dengan mengubah nilai-nilai berikut:
+Di folder `whatsapp-client`, ubah file `.env` sesuai dengan pengaturan berikut:
 
 <pre>
 HTTP_PORT=2000
@@ -25,10 +24,10 @@ WHATSAPP_WEBHOOK=http://localhost:2000/api/whatsapp/:_id/webhook
 WHATSAPP_AUTOSTART=true
 </pre>
 
-- `WHATSAPP_WEBHOOK`: Atur webhook sesuai dengan aplikasi yang Anda kembangkan.
+- **`WHATSAPP_WEBHOOK`**: Sesuaikan URL webhook sesuai dengan aplikasi yang kamu buat.
 
-## Note
+## Catatan
 
-- Aplikasi ini masih dalam tahap pengembangan, dan akan dilakukan update secara otomatis.
-- Contoh request HTTP bisa dilihat di [lihat request](./http/whatsapp.http).
-- Keterangan penggunaan dan tutorial sedang dibuat.
+- Aplikasi ini masih dalam tahap pengembangan, dan akan otomatis diperbarui.
+- Contoh permintaan HTTP bisa dilihat di [lihat request](./http/whatsapp.http).
+- Panduan penggunaan dan tutorial sedang dibuat.
