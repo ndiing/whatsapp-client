@@ -34,19 +34,18 @@ Content-Type: application/json
     },
     "options": {
         "quoted":  {
-            "conversation": "wkwkwk",
-            "messageContextInfo": {
-                "deviceListMetadata": {
-                    "senderKeyHash": "pQAlTN9J9K/pbg==",
-                    "senderTimestamp": "1729480694",
-                    "senderAccountType": "E2EE",
-                    "receiverAccountType": "E2EE",
-                    "recipientKeyHash": "SHzGndeGC0bJaw==",
-                    "recipientTimestamp": "1726543726"
-                },
-                "deviceListMetadataVersion": 2,
-                "messageSecret": "pPcrvvssQ0YdpJen3ABpLrtRQtOSsSe+C3Q4DLX/soo="
-            }
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB084D7FA4173D7D51468"
+            },
+            "message": {
+                "extendedTextMessage": {
+                "text": "apa kabar ndiing? bisa pinjam dulu 100?"
+                }
+            },
+            "messageTimestamp": "1729485428",
+            "status": "READ"
         }
     }
 }
@@ -60,7 +59,7 @@ Content-Type: application/json
     "content": {
         "text": "apa kabar ndiing? bisa pinjam dulu 100?",
         "mentions": [
-            "6281953656221@s.whatsapp.net"
+            "6281935155404@s.whatsapp.net"
         ]
     }
 }
@@ -107,9 +106,9 @@ Content-Type: application/json
         "react": {
             "text": "💖",
             "key": {
-                "remoteJid": "6281953656221@s.whatsapp.net",
-                "fromMe": false,
-                "id": "3EB0F00F433E6FC482FF20"
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB084D7FA4173D7D51468"
             }
         }
     }
@@ -162,44 +161,27 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "6281935155404@s.whatsapp.net",
+    "jid": "6281953656221@s.whatsapp.net",
     "content": {
-        "forward": {
+        "forward":  {
             "key": {
-                "remoteJid": "6281953656221@s.whatsapp.net",
-                "fromMe": false,
-                "id": "3EB0F00F433E6FC482FF20"
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB08DEE8E9FDA0C6C6B5B"
             },
             "message": {
-                "conversation": "wkwkwk",
-                "messageContextInfo": {
-                "deviceListMetadata": {
-                    "senderKeyHash": "pQAlTN9J9K/pbg==",
-                    "senderTimestamp": "1729480694",
-                    "senderAccountType": "E2EE",
-                    "receiverAccountType": "E2EE",
-                    "recipientKeyHash": "SHzGndeGC0bJaw==",
-                    "recipientTimestamp": "1726543726"
+                "reactionMessage": {
+                "key": {
+                    "remoteJid": "6281935155404@s.whatsapp.net",
+                    "fromMe": true,
+                    "id": "3EB084D7FA4173D7D51468"
                 },
-                "deviceListMetadataVersion": 2,
-                "messageSecret": "pPcrvvssQ0YdpJen3ABpLrtRQtOSsSe+C3Q4DLX/soo="
+                "text": "💖",
+                "senderTimestampMs": "1729485652806"
                 }
             },
-            "messageTimestamp": "1729481350",
-            "status": "READ",
-            "broadcast": false,
-            "pushName": "Mokhamad Ariadi",
-            "reactions": [
-                {
-                    "key": {
-                        "remoteJid": "6281953656221@s.whatsapp.net",
-                        "fromMe": true,
-                        "id": "3EB05A05D71F370E70B7FB"
-                    },
-                    "text": "💖",
-                    "senderTimestampMs": "1729482749113"
-                }
-            ]
+            "messageTimestamp": "1729485652",
+            "status": "PENDING"
         }
     }
 }
@@ -216,9 +198,9 @@ Content-Type: application/json
 {
     "keys": [
         {
-            "remoteJid": "6281953656221@s.whatsapp.net",
+            "remoteJid": "6281935155404@s.whatsapp.net",
             "fromMe": false,
-            "id": "3EB0F00F433E6FC482FF20"
+            "id": "3EB0D7F4EBB7BE5D2E7D26"
         }
     ]
 }
@@ -275,5 +257,5 @@ Content-Type: application/json
 
 {
     "jid": "{{jid}}@s.whatsapp.net", 
-    "id": "3EB0F00F433E6FC482FF20"
+    "id": "3EB084D7FA4173D7D51468"
 }
