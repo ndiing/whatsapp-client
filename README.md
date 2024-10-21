@@ -16,7 +16,7 @@
 
 Di folder `whatsapp-client`, ubah file `.env` dengan pengaturan berikut:
 
-```bash
+```
 HTTP_PORT=2000
 HTTPS_PORT=0
 HOSTNAME=localhost
@@ -25,6 +25,13 @@ WHATSAPP_AUTOSTART=true
 ```
 
 - **`WHATSAPP_WEBHOOK`**: Sesuaikan URL webhook sesuai aplikasi yang kamu buat.
+
+## Lokasi Data
+
+Sejak versi **2.0.0**, lokasi penyimpanan data aplikasi telah dipindahkan. Untuk mengakses folder data aplikasi:
+
+1. Tekan `Win + R`.
+2. Ketik `%appdata%/whatsapp-client` dan tekan **Enter**.
 
 ## Tutorial: Membuat Webhook dengan Express
 
@@ -35,7 +42,7 @@ Berikut langkah-langkah untuk membuat webhook sederhana menggunakan Express:
 
 2. **Buat file** bernama `webhook.js` dan tambahkan kode berikut:
 
-```js
+```
 const express = require('express');
 
 const app = express();
@@ -83,7 +90,7 @@ Berikut langkah-langkah untuk membuat webhook sederhana menggunakan PHP:
 
 1. **Buat file** bernama `webhook.php` dan tambahkan kode berikut:
 
-```php
+```
 <?php
 
 header('Content-Type: application/json');
