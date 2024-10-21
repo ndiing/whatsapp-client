@@ -3,11 +3,19 @@
 [![GitHub Release](https://img.shields.io/github/v/release/ndiing/whatsapp-client)](https://github.com/ndiing/whatsapp-client/releases)
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ndiing/whatsapp-client/total)](https://github.com/ndiing/whatsapp-client/releases)
 
-WhatsApp Client adalah aplikasi yang dirancang sebagai klien dan bertindak sebagai HTTP server untuk menjembatani WhatsApp dengan perangkat lunak yang dikembangkan. Aplikasi ini berkomunikasi menggunakan HTTP request dan webhook, serta dirancang untuk kebutuhan perangkat lunak yang belum mendukung teknologi socket dan server-sent event.
+WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server untuk menghubungkan WhatsApp dengan perangkat lunak yang Anda kembangkan. Aplikasi ini berkomunikasi melalui HTTP request dan webhook, dan dirancang untuk perangkat lunak yang belum mendukung teknologi socket dan server-sent event.
+
+## Daftar Isi
+
+- [Pemasangan](#pemasangan)
+- [Penggunaan](#penggunaan)
+- [Pengaturan](#pengaturan)
+- [REST API](#rest-api)
+- [Tutorial](#tutorial)
 
 ## Pemasangan
 
-Instalasi aplikasi cukup mudah, ikuti langkah-langkah berikut:
+Instalasi aplikasi cukup mudah. Ikuti langkah-langkah berikut:
 
 1. Unduh aplikasi dari [halaman rilis](https://github.com/ndiing/whatsapp-client/releases).
 2. Instal aplikasi.
@@ -16,14 +24,14 @@ Instalasi aplikasi cukup mudah, ikuti langkah-langkah berikut:
 
 ## Penggunaan
 
-Berikut adalah penggunaan dasar aplikasi:
+Berikut adalah cara dasar penggunaan aplikasi:
 
 1. **Hover** pada icon tray untuk melihat versi aplikasi.
-2. **Klik kanan** dan pilih **Berhenti** untuk mematikan aplikasi.
+2. **Klik kanan** pada icon tray dan pilih **Berhenti** untuk mematikan aplikasi.
 
 ## Pengaturan
 
-Untuk mengatur variabel lingkungan (env), silakan buka jendela run (Windows + R) dan ketik `%appdata%/whatsapp-client`, lalu buka file `.env`. Berikut adalah nilai defaultnya:
+Untuk mengatur variabel lingkungan (env), buka jendela run (Windows + R) dan ketik `%appdata%/whatsapp-client`, lalu buka file `.env`. Berikut adalah nilai defaultnya:
 
 <pre>
 HTTP_PORT=2000
@@ -33,8 +41,10 @@ WHATSAPP_WEBHOOK=http://localhost:2000/api/whatsapp/:_id/webhook
 WHATSAPP_AUTOSTART=false
 </pre>
 
-1. Sesuaikan nilai `WHATSAPP_WEBHOOK` dengan perangkat lunak yang sedang dikembangkan.
-2. Ubah `WHATSAPP_AUTOSTART` ke `true` untuk menjalankan aplikasi secara otomatis.
+### Langkah Pengaturan
+
+1. **Sesuaikan** nilai `WHATSAPP_WEBHOOK` dengan perangkat lunak yang sedang dikembangkan.
+2. **Ubah** `WHATSAPP_AUTOSTART` menjadi `true` jika Anda ingin aplikasi berjalan otomatis saat startup.
 
 ## REST API
 
@@ -52,6 +62,64 @@ Berikut langkah-langkah penggunaan aplikasi:
 1. **Buat webhook** terlebih dahulu.
 2. **Atur webhook** pada file `.env`.
 3. **Buka aplikasi**.
+
+### Mengakses Aplikasi
+
+- **Untuk menjalankan aplikasi**:
+
+<pre>
+POST http://localhost:2000/api/whatsapp/{{_id}}/start 
+Content-Type: application/json
+
+{}
+</pre>
+
+- **Untuk mengirim pesan** (teks sederhana):
+
+<pre>
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "text": "Kirim pesan teks sederhana!"
+    }
+}
+</pre>
+
+- **Untuk menghentikan aplikasi**:
+
+<pre>
+POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
+Content-Type: application/json
+
+{}
+</pre>
+
+### Menggunakan Beberapa Akun
+
+Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
+
+- **Contoh 1**:
+
+<pre>
+POST http://localhost:2000/api/whatsapp/62123456789/start 
+Content-Type: application/json
+
+{}
+</pre>
+
+- **Contoh 2**:
+
+<pre>
+POST http://localhost:2000/api/whatsapp/62987654321/start 
+Content-Type: application/json
+
+{}
+</pre>
+
+### Penanganan QR Code
 
 Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook:
 
