@@ -65,86 +65,77 @@ Berikut langkah-langkah penggunaan aplikasi:
 2. **Atur webhook** pada file `.env`.
 3. **Buka aplikasi**.
 4. **Penanganan QR Code**: Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook:
-
-    <pre>
-    async function webhook(req, res, next) {
-        try {
-            if (req.body["connection.update"]) {
-                const update = req.body["connection.update"];
-    
-                if (update.qr) {
-                    console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
-                }
-            }
-    
-            if (req.body["messages.upsert"]) {
-                const upsert = req.body["messages.upsert"];
-    
-                if (upsert.type === "notify") {
-                    for (const msg of upsert.messages) {
-                        console.log(msg);
-                    }
-                }
-            }
-    
-            res.json({ message: "OK" });
-        } catch (error) {
-            next(error);
-        }
-    }
-    </pre>
+ <pre>
+ async function webhook(req, res, next) {
+     try {
+         if (req.body["connection.update"]) {
+             const update = req.body["connection.update"];
+ 
+             if (update.qr) {
+                 console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
+             }
+         }
+ 
+         if (req.body["messages.upsert"]) {
+             const upsert = req.body["messages.upsert"];
+ 
+             if (upsert.type === "notify") {
+                 for (const msg of upsert.messages) {
+                     console.log(msg);
+                 }
+             }
+         }
+ 
+         res.json({ message: "OK" });
+     } catch (error) {
+         next(error);
+     }
+ }
+ </pre>
 
 5. **Mengakses API WhatsApp**:
 
     - **Untuk menjalankan API**:
+      <pre>
+      POST http://localhost:2000/api/whatsapp/{{_id}}/start 
+      Content-Type: application/json
 
-    <pre>
-    POST http://localhost:2000/api/whatsapp/{{_id}}/start 
-    Content-Type: application/json
-    
     {}
     </pre>
-
     - **Untuk mengirim pesan** (teks sederhana):
-
     <pre>
     POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
     Content-Type: application/json
-    
+
     {
-        "jid": "{{jid}}@s.whatsapp.net",
-        "content": {
-            "text": "Kirim pesan teks sederhana!"
-        }
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+    "text": "Kirim pesan teks sederhana!"
+    }
     }
     </pre>
-
     - **Untuk menghentikan API**:
-
     <pre>
     POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
     Content-Type: application/json
-    
+
     {}
     </pre>
 
 6. **Menggunakan Beberapa Akun**: Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
 
     - **Contoh 1**:
+      <pre>
+      POST http://localhost:2000/api/whatsapp/62123456789/start 
+      Content-Type: application/json
 
-    <pre>
-    POST http://localhost:2000/api/whatsapp/62123456789/start 
-    Content-Type: application/json
-    
     {}
     </pre>
-
     - **Contoh 2**:
-
     <pre>
     POST http://localhost:2000/api/whatsapp/62987654321/start 
     Content-Type: application/json
-    
+
     {}
     </pre>
 
@@ -153,9 +144,7 @@ Berikut langkah-langkah penggunaan aplikasi:
 Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa error umum dan solusinya:
 
 1. **Error QR Code Tidak Muncul**: Pastikan Anda telah menangani webhook dengan benar. Periksa konsol untuk memastikan tidak ada kesalahan.
-
 2. **API Tidak Berfungsi**: Pastikan aplikasi berjalan di background dan variabel `WHATSAPP_WEBHOOK` telah diatur dengan benar.
-
 3. **Kesalahan Koneksi**: Cek koneksi jaringan Anda dan pastikan bahwa port yang digunakan (default: 2000) tidak diblokir oleh firewall.
 
 ## Referensi
