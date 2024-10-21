@@ -12,7 +12,7 @@
 
 
 
-### loadMessages
+### Memuat pesan dari penyimpanan, jika tidak ditemukan -- menggunakan koneksi lama
 POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages 
 Content-Type: application/json
 
@@ -22,7 +22,7 @@ Content-Type: application/json
     "cursor": null
 }
 
-### loadMessages
+### 
 POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages 
 Content-Type: application/json
 
@@ -68,7 +68,7 @@ Content-Type: application/json
 
 {
     "jid": "{{jid}}@s.whatsapp.net",
-    "id": "3EB0875D8B92CC3FF41B53"
+    "id": "3EB0ABDADB77FF1BE3F94A"
 }
 
 
@@ -81,7 +81,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/mostRecentMessage
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -89,8 +89,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/fetchImageUrl
 Content-Type: application/json
 
 {
-    "jid": "",
-    "sock": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -98,8 +97,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/fetchGroupMetadata
 Content-Type: application/json
 
 {
-    "jid": "",
-    "sock": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###

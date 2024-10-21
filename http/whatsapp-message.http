@@ -1,0 +1,363 @@
+### Kirim pesan teks sederhana!
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "text": "Kirim pesan teks sederhana!"
+    }
+}
+
+### Kirim pesan balasan
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "text": "Kirim pesan balasan"
+    },
+    "options": {
+        "quoted": {
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB0875D8B92CC3FF41B53"
+            },
+            "message": {
+                "extendedTextMessage": {
+                "text": "Kirim pesan teks sederhana!"
+                }
+            },
+            "messageTimestamp": "1729520294",
+            "status": "DELIVERY_ACK"
+            }
+    }
+}
+
+### Kirim pesan dengan mention
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "text": "Kirim pesan dengan mention @adi",
+        "mentions": [
+            "{{jid2}}@s.whatsapp.net"
+        ]
+    }
+}
+
+### Kirim lokasi!
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "location": {
+            "degreesLatitude": -8.2155165,
+            "degreesLongitude": 111.0968846
+        }
+    }
+}
+
+### Kirim kontak!
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "contacts": {
+            "displayName": "Ridho Prasetya",
+            "contacts": [
+                {
+                    "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:Ridho Prasetya\nORG:Ndiing;\nTEL;type=CELL;type=VOICE;waid=6281935155404:+6281935155404\nEND:VCARD"
+                }
+            ]
+        }
+    }
+}
+
+### Kirim pesan reaksi
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "react": {
+            "text": "💖",
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB0875D8B92CC3FF41B53"
+            }
+        }
+    }
+}
+
+### Kirim tautan
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "text": "Halo, ini dikirim menggunakan https://github.com/ndiing/whatsapp-client"
+    }
+}
+
+### Kirim GIF
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "video": "./media/video.mp4",
+        "caption": "halo!",
+        "gifPlayback": true
+    }
+}
+
+### Kirim GIF (dengan opsi tambahan)
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "video": "./media/video.mp4",
+        "caption": "halo!",
+        "gifPlayback": true,
+        "ptv": false
+    }
+}
+
+### Kirim file audio
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "audio": {
+            "url": "./media/audio.mp3"
+        },
+        "mimetype": "audio/mp4"
+    }
+}
+
+### Meneruskan Pesan
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid2}}@s.whatsapp.net",
+    "content": {
+        "forward": {
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB0875D8B92CC3FF41B53"
+            },
+            "message": {
+                "extendedTextMessage": {
+                "text": "Kirim pesan teks sederhana!"
+                }
+            },
+            "messageTimestamp": "1729520294",
+            "status": "READ",
+            "reactions": [
+                {
+                "key": {
+                    "remoteJid": "6281935155404@s.whatsapp.net",
+                    "fromMe": true,
+                    "id": "3EB09C475E36F92D36609B"
+                },
+                "text": "💖",
+                "senderTimestampMs": "1729520621955"
+                }
+            ]
+            }
+    }
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/generateMessageTag 
+Content-Type: application/json
+
+{}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/waitForMessage 
+Content-Type: application/json
+
+{
+    "msgId": "",
+    "timeoutMs": ""
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendRawMessage 
+Content-Type: application/json
+
+{
+    "data": ""
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/upsertMessage 
+Content-Type: application/json
+
+{
+    "args": ""
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/addMessageLabel 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "messageId": "",
+    "labelId": ""
+}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/removeMessageLabel 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "messageId": "",
+    "labelId": ""
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/relayMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "message": "",
+    "__namedParameters": ""
+}
+
+
+
+
+
+
+
+### Reading Messages
+POST http://localhost:2000/api/whatsapp/{{_id}}/readMessages 
+Content-Type: application/json
+
+{
+    "keys":  [
+        {
+            "remoteJid": "6281935155404@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0ABDADB77FF1BE3F94A"
+        }
+    ]
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendPeerDataOperationMessage 
+Content-Type: application/json
+
+{
+    "pdoMessage": ""
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateMediaMessage 
+Content-Type: application/json
+
+{
+    "message": ""
+}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": "",
+    "options": ""
+}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessageAck 
+Content-Type: application/json
+
+{
+    "__namedParameters": ""
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/fetchMessageHistory 
+Content-Type: application/json
+
+{
+    "count": "",
+    "oldestMsgKey": "",
+    "oldestMsgTimestamp": ""
+}
+
+
+
+
+

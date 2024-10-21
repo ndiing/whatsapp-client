@@ -10,11 +10,10 @@ Content-Type: application/json
 
 {}
 
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/generateMessageTag 
-Content-Type: application/json
 
-{}
+
+
+
 
 ###
 POST http://localhost:2000/api/whatsapp/{{_id}}/query 
@@ -26,27 +25,10 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/waitForMessage 
-Content-Type: application/json
-
-{
-    "msgId": "",
-    "timeoutMs": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/waitForSocketOpen 
 Content-Type: application/json
 
 {}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendRawMessage 
-Content-Type: application/json
-
-{
-    "data": ""
-}
 
 ###
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendNode 
@@ -129,14 +111,6 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/upsertMessage 
-Content-Type: application/json
-
-{
-    "args": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/appPatch 
 Content-Type: application/json
 
@@ -145,29 +119,11 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate 
-Content-Type: application/json
-
-{
-    "type": "",
-    "toJid": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/presenceSubscribe 
-Content-Type: application/json
-
-{
-    "toJid": "",
-    "tcToken": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl 
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "type": "",
     "timeoutMs": ""
 }
@@ -177,7 +133,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/onWhatsApp
 Content-Type: application/json
 
 {
-    "jids": ""
+    "jids": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -191,7 +147,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/fetchStatus
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -199,7 +155,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicture
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "content": ""
 }
 
@@ -208,7 +164,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/removeProfilePicture
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -232,7 +188,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/updateBlockStatus
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "action": ""
 }
 
@@ -305,7 +261,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getBusinessProfile
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -322,7 +278,7 @@ Content-Type: application/json
 
 {
     "mod": "",
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -339,7 +295,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/addLabel
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "labels": ""
 }
 
@@ -348,7 +304,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/addChatLabel
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "labelId": ""
 }
 
@@ -357,27 +313,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/removeChatLabel
 Content-Type: application/json
 
 {
-    "jid": "",
-    "labelId": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/addMessageLabel 
-Content-Type: application/json
-
-{
-    "jid": "",
-    "messageId": "",
-    "labelId": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/removeMessageLabel 
-Content-Type: application/json
-
-{
-    "jid": "",
-    "messageId": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "labelId": ""
 }
 
@@ -386,7 +322,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/star
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "messages": "",
     "star": ""
 }
@@ -396,7 +332,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupMetadata
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -421,7 +357,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateSubject
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "subject": ""
 }
 
@@ -430,7 +366,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsList
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -438,7 +374,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsUpdate
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "participants": "",
     "action": ""
 }
@@ -448,7 +384,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "participants": "",
     "action": ""
 }
@@ -458,7 +394,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateDescription
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "description": ""
 }
 
@@ -467,7 +403,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupInviteCode
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -475,7 +411,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupRevokeInvite
 Content-Type: application/json
 
 {
-    "jid": ""
+    "jid": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -516,7 +452,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupToggleEphemeral
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "ephemeralExpiration": ""
 }
 
@@ -525,7 +461,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "setting": ""
 }
 
@@ -534,7 +470,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupMemberAddMode
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "mode": ""
 }
 
@@ -543,7 +479,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupJoinApprovalMode
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "mode": ""
 }
 
@@ -558,7 +494,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getPrivacyTokens
 Content-Type: application/json
 
 {
-    "jids": ""
+    "jids": "{{jid}}@s.whatsapp.net"
 }
 
 ###
@@ -566,18 +502,8 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/assertSessions
 Content-Type: application/json
 
 {
-    "jids": "",
+    "jids": "{{jid}}@s.whatsapp.net",
     "force": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/relayMessage 
-Content-Type: application/json
-
-{
-    "jid": "",
-    "message": "",
-    "__namedParameters": ""
 }
 
 ###
@@ -585,7 +511,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendReceipt
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "participant": "",
     "messageIds": "",
     "type": ""
@@ -598,14 +524,6 @@ Content-Type: application/json
 {
     "keys": "",
     "type": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/readMessages 
-Content-Type: application/json
-
-{
-    "keys": ""
 }
 
 ###
@@ -625,19 +543,11 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendPeerDataOperationMessage 
-Content-Type: application/json
-
-{
-    "pdoMessage": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/createParticipantNodes 
 Content-Type: application/json
 
 {
-    "jids": "",
+    "jids": "{{jid}}@s.whatsapp.net",
     "message": "",
     "extraAttrs": ""
 }
@@ -647,35 +557,9 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getUSyncDevices
 Content-Type: application/json
 
 {
-    "jids": "",
+    "jids": "{{jid}}@s.whatsapp.net",
     "useCache": "",
     "ignoreZeroDevices": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateMediaMessage 
-Content-Type: application/json
-
-{
-    "message": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
-Content-Type: application/json
-
-{
-    "jid": "",
-    "content": "",
-    "options": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessageAck 
-Content-Type: application/json
-
-{
-    "__namedParameters": ""
 }
 
 ###
@@ -694,16 +578,6 @@ Content-Type: application/json
 {
     "callId": "",
     "callFrom": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/fetchMessageHistory 
-Content-Type: application/json
-
-{
-    "count": "",
-    "oldestMsgKey": "",
-    "oldestMsgTimestamp": ""
 }
 
 ###
@@ -736,7 +610,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getCollections
 Content-Type: application/json
 
 {
-    "jid": "",
+    "jid": "{{jid}}@s.whatsapp.net",
     "limit": ""
 }
 
