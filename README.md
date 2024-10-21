@@ -1,5 +1,7 @@
 # WhatsApp Client
 
+[https://img.shields.io/github/v/release/ndiing/whatsapp-client](https://github.com/ndiing/whatsapp-client/releases)
+
 `whatsapp-client` adalah sebuah library yang meng-wrap HTTP request dari API Web WhatsApp. Library ini dirancang untuk memenuhi kebutuhan aplikasi yang belum mendukung socket dan event source.
 
 ## Instal
