@@ -33,7 +33,21 @@ Content-Type: application/json
         "text": "apa kabar ndiing? bisa pinjam dulu 100?"
     },
     "options": {
-        "quoted": {}
+        "quoted":  {
+            "conversation": "wkwkwk",
+            "messageContextInfo": {
+                "deviceListMetadata": {
+                    "senderKeyHash": "pQAlTN9J9K/pbg==",
+                    "senderTimestamp": "1729480694",
+                    "senderAccountType": "E2EE",
+                    "receiverAccountType": "E2EE",
+                    "recipientKeyHash": "SHzGndeGC0bJaw==",
+                    "recipientTimestamp": "1726543726"
+                },
+                "deviceListMetadataVersion": 2,
+                "messageSecret": "pPcrvvssQ0YdpJen3ABpLrtRQtOSsSe+C3Q4DLX/soo="
+            }
+        }
     }
 }
 
@@ -44,9 +58,9 @@ Content-Type: application/json
 {
     "jid": "{{jid}}@s.whatsapp.net",
     "content": {
-        "text": "@12345678901",
+        "text": "apa kabar ndiing? bisa pinjam dulu 100?",
         "mentions": [
-            "12345678901@s.whatsapp.net"
+            "6281953656221@s.whatsapp.net"
         ]
     }
 }
@@ -92,7 +106,11 @@ Content-Type: application/json
     "content": {
         "react": {
             "text": "💖",
-            "key": {}
+            "key": {
+                "remoteJid": "6281953656221@s.whatsapp.net",
+                "fromMe": false,
+                "id": "3EB0F00F433E6FC482FF20"
+            }
         }
     }
 }
@@ -110,9 +128,9 @@ Content-Type: application/json
 {
     "keys": [
         {
-            "remoteJid": "{{jid}}@s.whatsapp.net",
+            "remoteJid": "6281953656221@s.whatsapp.net",
             "fromMe": false,
-            "id": "3EB03DE1076F131759B0AA"
+            "id": "3EB0F00F433E6FC482FF20"
         }
     ]
 }
@@ -168,5 +186,5 @@ Content-Type: application/json
 
 {
     "jid": "{{jid}}@s.whatsapp.net", 
-    "id": "3EB0CA7B02C663A4098CAA"
+    "id": "3EB0F00F433E6FC482FF20"
 }
