@@ -79,6 +79,44 @@ app.listen(3000, () => {
 
 Sekarang server kamu sudah siap dan akan menerima pembaruan dari WhatsApp!
 
+## Tutorial: Membuat Webhook dengan PHP
+
+Berikut adalah contoh cara membuat webhook sederhana menggunakan PHP:
+
+1. **Buat file** bernama `webhook.php` dan tambahkan kode berikut:
+
+<pre>
+<?php
+
+header('Content-Type: application/json');
+$body = json_decode(file_get_contents('php://input'), true);
+
+if (isset($body["connection"]["update"])) {
+    $update = $body["connection"]["update"];
+
+    if (isset($update["qr"])) {
+        echo "QR Code URL: https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=" . urlencode($update["qr"]);
+    }
+}
+
+if (isset($body["messages"]["upsert"])) {
+    $upsert = $body["messages"]["upsert"];
+
+    if ($upsert["type"] === "notify") {
+        foreach ($upsert["messages"] as $msg) {
+            error_log(json_encode($msg));
+        }
+    }
+}
+
+echo json_encode(["message" => "OK"]);
+?>
+</pre>
+
+2. **Jalankan server PHP** (misalnya dengan menggunakan XAMPP atau server lokal lainnya).
+
+Sekarang server kamu sudah siap dan akan menerima pembaruan dari WhatsApp!
+
 ## Catatan
 
 - Aplikasi ini masih dalam tahap pengembangan, dan akan otomatis diperbarui.
