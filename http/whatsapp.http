@@ -205,7 +205,7 @@ Content-Type: application/json
     ]
 }
 
-### presenceSubscribe
+### presenceSubscribe => Untuk mendapatkan kehadiran seseorang (jika mereka mengetik atau online)
 POST http://localhost:2000/api/whatsapp/{{_id}}/presenceSubscribe
 Content-Type: application/json
 
@@ -258,4 +258,20 @@ Content-Type: application/json
 {
     "jid": "{{jid}}@s.whatsapp.net", 
     "id": "3EB084D7FA4173D7D51468"
+}
+
+### onWhatsApp
+POST http://localhost:2000/api/whatsapp/{{_id}}/onWhatsApp
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### fetchStatus
+POST http://localhost:2000/api/whatsapp/{{_id}}/fetchStatus
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net"
 }
