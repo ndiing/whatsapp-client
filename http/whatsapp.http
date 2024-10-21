@@ -1,5 +1,5 @@
-@_id=6281938064XXX
-@jid=6281953656XXX
+@_id=6281938064xxx
+@jid=6281953656xxx
 
 ### start
 GET http://localhost:2000/api/whatsapp/{{_id}}/start
@@ -12,7 +12,7 @@ GET http://localhost:2000/api/whatsapp/{{_id}}/stop
 
 
 
-### sendMessage
+### sendMessage => Kirim teks sederhana
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -23,7 +23,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage
+### sendMessage => Kirim pesan balasan
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -51,7 +51,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage
+### sendMessage => Kirim pesan menyebutkan
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -65,7 +65,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage
+### sendMessage => Kirim lokasi
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -79,7 +79,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage
+### sendMessage => Kirim kontak
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -97,7 +97,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage
+### sendMessage => Pesan reaksi
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -115,13 +115,101 @@ Content-Type: application/json
     }
 }
 
+### sendMessage => Mengirim gif
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "video": "./media/video.mp4",
+        "caption": "coba liat ini bro",
+        "gifPlayback": true
+    }
+}
+
+### sendMessage => Mengirim gif
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "video": "./media/video.mp4",
+        "caption": "coba liat ini bro",
+        "gifPlayback": true,
+        "ptv": false
+    }
+}
+
+### sendMessage => Kirim file audio
+### mimetype=[audio/mp3,audio/mp4,audio/ogg]
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "audio": {
+            "url": "./media/audio.mp3"
+        },
+        "mimetype": "audio/mp3"
+    }
+}
+
+### sendMessage => Meneruskan pesan 
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
+
+{
+    "jid": "6281935155404@s.whatsapp.net",
+    "content": {
+        "forward": {
+            "key": {
+                "remoteJid": "6281953656221@s.whatsapp.net",
+                "fromMe": false,
+                "id": "3EB0F00F433E6FC482FF20"
+            },
+            "message": {
+                "conversation": "wkwkwk",
+                "messageContextInfo": {
+                "deviceListMetadata": {
+                    "senderKeyHash": "pQAlTN9J9K/pbg==",
+                    "senderTimestamp": "1729480694",
+                    "senderAccountType": "E2EE",
+                    "receiverAccountType": "E2EE",
+                    "recipientKeyHash": "SHzGndeGC0bJaw==",
+                    "recipientTimestamp": "1726543726"
+                },
+                "deviceListMetadataVersion": 2,
+                "messageSecret": "pPcrvvssQ0YdpJen3ABpLrtRQtOSsSe+C3Q4DLX/soo="
+                }
+            },
+            "messageTimestamp": "1729481350",
+            "status": "READ",
+            "broadcast": false,
+            "pushName": "Mokhamad Ariadi",
+            "reactions": [
+                {
+                    "key": {
+                        "remoteJid": "6281953656221@s.whatsapp.net",
+                        "fromMe": true,
+                        "id": "3EB05A05D71F370E70B7FB"
+                    },
+                    "text": "💖",
+                    "senderTimestampMs": "1729482749113"
+                }
+            ]
+        }
+    }
+}
 
 
 
 
 
 
-### readMessages
+### readMessages => Membaca pesan
 POST http://localhost:2000/api/whatsapp/{{_id}}/readMessages
 Content-Type: application/json
 
@@ -148,7 +236,8 @@ Content-Type: application/json
 
 
 
-### sendPresenceUpdate
+### sendPresenceUpdate => Perbarui keberadaan
+### type=[unavailable,available,composing,recording,paused]
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
 Content-Type: application/json
 
@@ -157,7 +246,7 @@ Content-Type: application/json
     "toJid": "{{jid}}@s.whatsapp.net"
 }
 
-### sendPresenceUpdate
+### sendPresenceUpdate => Perbarui keberadaan
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
 Content-Type: application/json
 
