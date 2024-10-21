@@ -7,13 +7,13 @@ WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server unt
 
 ## Daftar Isi
 
--   [Pemasangan](#pemasangan)
--   [Penggunaan](#penggunaan)
--   [Pengaturan](#pengaturan)
--   [REST API](#rest-api)
--   [Tutorial](#tutorial)
--   [Penanganan Error](#penanganan-error)
--   [Referensi](#referensi)
+- [Pemasangan](#pemasangan)
+- [Penggunaan](#penggunaan)
+- [Pengaturan](#pengaturan)
+- [REST API](#rest-api)
+- [Tutorial](#tutorial)
+- [Penanganan Error](#penanganan-error)
+- [Referensi](#referensi)
 
 ## Pemasangan
 
@@ -52,10 +52,10 @@ WHATSAPP_AUTOSTART=false
 
 Berikut adalah contoh penggunaan REST API:
 
-1. [whatsapp.http](./http/whatsapp.http) - Semua API.
-2. [whatsapp-message.http](./http/whatsapp-message.http) - Penanganan pesan.
-3. [whatsapp-presence.http](./http/whatsapp-presence.http) - Kehadiran pengguna.
-4. [whatsapp-store.http](./http/whatsapp-store.http) - Penanganan data.
+1. [Semua API](./http/whatsapp.http)
+2. [Penanganan pesan](./http/whatsapp-message.http)
+3. [Kehadiran pengguna](./http/whatsapp-presence.http)
+4. [Penanganan data](./http/whatsapp-store.http)
 
 ## Tutorial
 
@@ -65,55 +65,60 @@ Berikut langkah-langkah penggunaan aplikasi:
 2. **Atur webhook** pada file `.env`.
 3. **Buka aplikasi**.
 4. **Penanganan QR Code**: Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook:
- <pre>
- async function webhook(req, res, next) {
-     try {
-         if (req.body["connection.update"]) {
-             const update = req.body["connection.update"];
- 
-             if (update.qr) {
-                 console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
-             }
-         }
- 
-         if (req.body["messages.upsert"]) {
-             const upsert = req.body["messages.upsert"];
- 
-             if (upsert.type === "notify") {
-                 for (const msg of upsert.messages) {
-                     console.log(msg);
-                 }
-             }
-         }
- 
-         res.json({ message: "OK" });
-     } catch (error) {
-         next(error);
-     }
- }
- </pre>
+
+<pre>
+async function webhook(req, res, next) {
+    try {
+        if (req.body["connection.update"]) {
+            const update = req.body["connection.update"];
+
+            // Jika ada QR code, cetak URL untuk membuat QR code
+            if (update.qr) {
+                console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
+            }
+        }
+
+        if (req.body["messages.upsert"]) {
+            const upsert = req.body["messages.upsert"];
+
+            // Cetak pesan jika tipe notifikasi
+            if (upsert.type === "notify") {
+                for (const msg of upsert.messages) {
+                    console.log(msg);
+                }
+            }
+        }
+
+        res.json({ message: "OK" });
+    } catch (error) {
+        next(error);
+    }
+}
+</pre>
 
 5. **Mengakses API WhatsApp**:
 
     - **Untuk menjalankan API**:
-      <pre>
-      POST http://localhost:2000/api/whatsapp/{{_id}}/start 
-      Content-Type: application/json
+    <pre>
+    POST http://localhost:2000/api/whatsapp/{{_id}}/start 
+    Content-Type: application/json
 
     {}
     </pre>
+    
     - **Untuk mengirim pesan** (teks sederhana):
     <pre>
     POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
     Content-Type: application/json
 
     {
-    "jid": "{{jid}}@s.whatsapp.net",
-    "content": {
-    "text": "Kirim pesan teks sederhana!"
-    }
+        "jid": "{{jid}}@s.whatsapp.net",
+        "content": {
+            "text": "Kirim pesan teks sederhana!"
+        }
     }
     </pre>
+    
     - **Untuk menghentikan API**:
     <pre>
     POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
@@ -125,12 +130,13 @@ Berikut langkah-langkah penggunaan aplikasi:
 6. **Menggunakan Beberapa Akun**: Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
 
     - **Contoh 1**:
-      <pre>
-      POST http://localhost:2000/api/whatsapp/62123456789/start 
-      Content-Type: application/json
+    <pre>
+    POST http://localhost:2000/api/whatsapp/62123456789/start 
+    Content-Type: application/json
 
     {}
     </pre>
+    
     - **Contoh 2**:
     <pre>
     POST http://localhost:2000/api/whatsapp/62987654321/start 
@@ -151,5 +157,5 @@ Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa e
 
 Untuk informasi lebih lanjut, Anda dapat mengunjungi:
 
--   [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
--   [Node.js](https://nodejs.org/en/docs/)
+- [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
+- [Node.js](https://nodejs.org/en/docs/)
