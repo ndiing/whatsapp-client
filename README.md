@@ -62,91 +62,86 @@ Berikut langkah-langkah penggunaan aplikasi:
 1. **Buat webhook** terlebih dahulu.
 2. **Atur webhook** pada file `.env`.
 3. **Buka aplikasi**.
+4. **Penanganan QR Code**: Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook:
 
-### Mengakses Aplikasi
+   <pre>
+   async function webhook(req, res, next) {
+       try {
+           if (req.body["connection.update"]) {
+               const update = req.body["connection.update"];
 
-- **Untuk menjalankan aplikasi**:
+               if (update.qr) {
+                   console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
+               }
+           }
 
-<pre>
-POST http://localhost:2000/api/whatsapp/{{_id}}/start 
-Content-Type: application/json
+           if (req.body["messages.upsert"]) {
+               const upsert = req.body["messages.upsert"];
 
-{}
-</pre>
+               if (upsert.type === "notify") {
+                   for (const msg of upsert.messages) {
+                       console.log(msg);
+                   }
+               }
+           }
 
-- **Untuk mengirim pesan** (teks sederhana):
+           res.json({ message: "OK" });
+       } catch (error) {
+           next(error);
+       }
+   }
+   </pre>
 
-<pre>
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
-Content-Type: application/json
+5. **Mengakses API WhatsApp**:
 
-{
-    "jid": "{{jid}}@s.whatsapp.net",
-    "content": {
-        "text": "Kirim pesan teks sederhana!"
-    }
-}
-</pre>
+   - **Untuk menjalankan API**:
 
-- **Untuk menghentikan aplikasi**:
+   <pre>
+   POST http://localhost:2000/api/whatsapp/{{_id}}/start 
+   Content-Type: application/json
 
-<pre>
-POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
-Content-Type: application/json
+   {}
+   </pre>
 
-{}
-</pre>
+   - **Untuk mengirim pesan** (teks sederhana):
 
-### Menggunakan Beberapa Akun
+   <pre>
+   POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+   Content-Type: application/json
 
-Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
+   {
+       "jid": "{{jid}}@s.whatsapp.net",
+       "content": {
+           "text": "Kirim pesan teks sederhana!"
+       }
+   }
+   </pre>
 
-- **Contoh 1**:
+   - **Untuk menghentikan API**:
 
-<pre>
-POST http://localhost:2000/api/whatsapp/62123456789/start 
-Content-Type: application/json
+   <pre>
+   POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
+   Content-Type: application/json
 
-{}
-</pre>
+   {}
+   </pre>
 
-- **Contoh 2**:
+6. **Menggunakan Beberapa Akun**: Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
 
-<pre>
-POST http://localhost:2000/api/whatsapp/62987654321/start 
-Content-Type: application/json
+   - **Contoh 1**:
 
-{}
-</pre>
+   <pre>
+   POST http://localhost:2000/api/whatsapp/62123456789/start 
+   Content-Type: application/json
 
-### Penanganan QR Code
+   {}
+   </pre>
 
-Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook:
+   - **Contoh 2**:
 
-<pre>
-async function webhook(req, res, next) {
-    try {
-        if (req.body["connection.update"]) {
-            const update = req.body["connection.update"];
+   <pre>
+   POST http://localhost:2000/api/whatsapp/62987654321/start 
+   Content-Type: application/json
 
-            if (update.qr) {
-                console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
-            }
-        }
-
-        if (req.body["messages.upsert"]) {
-            const upsert = req.body["messages.upsert"];
-
-            if (upsert.type === "notify") {
-                for (const msg of upsert.messages) {
-                    console.log(msg);
-                }
-            }
-        }
-
-        res.json({ message: "OK" });
-    } catch (error) {
-        next(error);
-    }
-}
-</pre>
+   {}
+   </pre>
