@@ -12,7 +12,7 @@ GET http://localhost:2000/api/whatsapp/{{_id}}/stop
 
 
 
-### sendMessage => Kirim teks sederhana
+### Kirim teks sederhana
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -23,7 +23,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Kirim pesan balasan
+### Kirim pesan balasan
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -50,21 +50,21 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Kirim pesan menyebutkan
+### Kirim pesan menyebutkan
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
     "jid": "{{jid}}@s.whatsapp.net",
     "content": {
-        "text": "apa kabar ndiing? bisa pinjam dulu 100?",
+        "text": "apa kabar @ndiing? bisa pinjam dulu 100?",
         "mentions": [
             "6281935155404@s.whatsapp.net"
         ]
     }
 }
 
-### sendMessage => Kirim lokasi
+### Kirim lokasi
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -78,7 +78,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Kirim kontak
+### Kirim kontak
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -96,7 +96,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Pesan reaksi
+### reaksi pesan 
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -114,7 +114,25 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Mengirim gif
+### Gunakan string kosong untuk menghilangkan reaksi
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "react": {
+            "text": "",
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB084D7FA4173D7D51468"
+            }
+        }
+    }
+}
+
+### Mengirim gif
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -127,7 +145,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Mengirim gif
+### 
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -141,8 +159,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Kirim file audio
-### mimetype=[audio/mp3,audio/mp4,audio/ogg]
+### Kirim file audio
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -156,7 +173,7 @@ Content-Type: application/json
     }
 }
 
-### sendMessage => Meneruskan pesan 
+### Meneruskan Pesan 
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -191,7 +208,7 @@ Content-Type: application/json
 
 
 
-### readMessages => Membaca pesan
+### Membaca pesan
 POST http://localhost:2000/api/whatsapp/{{_id}}/readMessages
 Content-Type: application/json
 
@@ -205,7 +222,7 @@ Content-Type: application/json
     ]
 }
 
-### presenceSubscribe => Untuk mendapatkan kehadiran seseorang (jika mereka mengetik atau online)
+### Untuk mendapatkan kehadiran seseorang (jika mereka mengetik atau online)
 POST http://localhost:2000/api/whatsapp/{{_id}}/presenceSubscribe
 Content-Type: application/json
 
@@ -218,8 +235,7 @@ Content-Type: application/json
 
 
 
-### sendPresenceUpdate => Perbarui keberadaan
-### type=[unavailable,available,composing,recording,paused]
+### Ini membuat orang/grup dengan ID tahu apakah Anda online, offline, mengetik dll.
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
 Content-Type: application/json
 
@@ -228,7 +244,7 @@ Content-Type: application/json
     "toJid": "{{jid}}@s.whatsapp.net"
 }
 
-### sendPresenceUpdate => Perbarui keberadaan
+### 
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
 Content-Type: application/json
 
@@ -260,7 +276,7 @@ Content-Type: application/json
     "id": "3EB084D7FA4173D7D51468"
 }
 
-### onWhatsApp
+### Untuk memeriksa apakah ID yang diberikan ada di whatsapp
 POST http://localhost:2000/api/whatsapp/{{_id}}/onWhatsApp
 Content-Type: application/json
 
@@ -268,7 +284,7 @@ Content-Type: application/json
     "jid": "{{jid}}@s.whatsapp.net"
 }
 
-### fetchStatus
+### Untuk mendapatkan status beberapa orang
 POST http://localhost:2000/api/whatsapp/{{_id}}/fetchStatus
 Content-Type: application/json
 
