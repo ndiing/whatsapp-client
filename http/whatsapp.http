@@ -235,7 +235,7 @@ Content-Type: application/json
 
 
 
-### Ini membuat orang/grup dengan ID tahu apakah Anda online, offline, mengetik dll.
+### Ini membuat orang/grup dengan ID tahu apakah Anda online, offline, mengetik dll. type=[unavailable|available|composing|recording|paused]
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
 Content-Type: application/json
 
@@ -308,7 +308,7 @@ Content-Type: application/json
     "name": "Ndiing"
 }
 
-### Untuk mengubah nama profil Anda
+### Untuk mendapatkan gambar tampilan dari beberapa orang/grup
 POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl
 Content-Type: application/json
 
