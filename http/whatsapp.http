@@ -1,10 +1,10 @@
 @_id=6281938064XXX
-@jid=6281935155XXX
+@jid=6281953656XXX
 
-###  mulai
+### start
 GET http://localhost:2000/api/whatsapp/{{_id}}/start
 
-###  berhenti
+### stop
 GET http://localhost:2000/api/whatsapp/{{_id}}/stop
 
 
@@ -12,8 +12,7 @@ GET http://localhost:2000/api/whatsapp/{{_id}}/stop
 
 
 
-###  kirim teks sederhana
-
+### sendMessage
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -24,9 +23,7 @@ Content-Type: application/json
     }
 }
 
-
-###  kirim pesan balasan
-
+### sendMessage
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -40,8 +37,7 @@ Content-Type: application/json
     }
 }
 
-
-###  kirim pesan penyebutan
+### sendMessage
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -55,8 +51,7 @@ Content-Type: application/json
     }
 }
 
-
-###  kirim lokasi
+### sendMessage
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -70,8 +65,7 @@ Content-Type: application/json
     }
 }
 
-
-###  kirim kontak
+### sendMessage
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -89,8 +83,7 @@ Content-Type: application/json
     }
 }
 
-
-###  reaksi pesan
+### sendMessage
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -109,7 +102,8 @@ Content-Type: application/json
 
 
 
-###  Membaca Pesan
+
+### readMessages
 POST http://localhost:2000/api/whatsapp/{{_id}}/readMessages
 Content-Type: application/json
 
@@ -123,7 +117,7 @@ Content-Type: application/json
     ]
 }
 
-###  langgananKehadiran
+### presenceSubscribe
 POST http://localhost:2000/api/whatsapp/{{_id}}/presenceSubscribe
 Content-Type: application/json
 
@@ -135,7 +129,8 @@ Content-Type: application/json
 
 
 
-###  Perbarui Kehadiran
+
+### sendPresenceUpdate
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
 Content-Type: application/json
 
@@ -144,7 +139,7 @@ Content-Type: application/json
     "toJid": "{{jid}}@s.whatsapp.net"
 }
 
-###  Perbarui Kehadiran
+### sendPresenceUpdate
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate
 Content-Type: application/json
 
@@ -158,7 +153,8 @@ Content-Type: application/json
 
 
 
-###  muat Pesan
+
+### loadMessages
 POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages
 Content-Type: application/json
 
@@ -166,7 +162,7 @@ Content-Type: application/json
     "jid": "{{jid}}@s.whatsapp.net"
 }
 
-###  muat Pesan
+### loadMessage
 POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessage
 Content-Type: application/json
 
