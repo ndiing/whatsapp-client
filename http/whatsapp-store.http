@@ -1,0 +1,139 @@
+
+# ###
+# POST http://localhost:2000/api/whatsapp/{{_id}}/bind 
+# Content-Type: application/json
+
+# {
+#     "ev": ""
+# }
+
+
+
+
+
+
+### loadMessages
+POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "count": 1,
+    "cursor": null
+}
+
+### loadMessages
+POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/getLabels 
+Content-Type: application/json
+
+{}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/getChatLabels 
+Content-Type: application/json
+
+{
+    "chatId": ""
+}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/getMessageLabels 
+Content-Type: application/json
+
+{
+    "messageId": ""
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "id": "3EB0875D8B92CC3FF41B53"
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/mostRecentMessage 
+Content-Type: application/json
+
+{
+    "jid": ""
+}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/fetchImageUrl 
+Content-Type: application/json
+
+{
+    "jid": "",
+    "sock": ""
+}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/fetchGroupMetadata 
+Content-Type: application/json
+
+{
+    "jid": "",
+    "sock": ""
+}
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/fetchMessageReceipts 
+Content-Type: application/json
+
+{}
+
+# ###
+# POST http://localhost:2000/api/whatsapp/{{_id}}/toJSON 
+# Content-Type: application/json
+
+# {}
+
+# ###
+# POST http://localhost:2000/api/whatsapp/{{_id}}/fromJSON 
+# Content-Type: application/json
+
+# {
+#     "json": ""
+# }
+
+# ###
+# POST http://localhost:2000/api/whatsapp/{{_id}}/writeToFile 
+# Content-Type: application/json
+
+# {
+#     "path": ""
+# }
+
+# ###
+# POST http://localhost:2000/api/whatsapp/{{_id}}/readFromFile 
+# Content-Type: application/json
+
+# {
+#     "path": ""
+# }
