@@ -16,13 +16,13 @@ Setelah diinstal, aplikasi akan langsung berjalan dan muncul di ikon tray (pojok
 
 Di folder `whatsapp-client`, ubah file `.env` sesuai dengan pengaturan berikut:
 
-<pre>
+```
 HTTP_PORT=2000
 HTTPS_PORT=0
 HOSTNAME=localhost
 WHATSAPP_WEBHOOK=http://localhost:3000/:_id/webhook
 WHATSAPP_AUTOSTART=true
-</pre>
+```
 
 - **`WHATSAPP_WEBHOOK`**: Sesuaikan URL webhook sesuai dengan aplikasi yang kamu buat.
 
@@ -31,11 +31,11 @@ WHATSAPP_AUTOSTART=true
 Berikut adalah contoh cara membuat webhook sederhana menggunakan Express:
 
 1. **Instal Express** jika belum terpasang:
-   <pre>npm install express</pre>
+   ```npm install express```
 
 2. **Buat file** bernama `webhook.js` dan tambahkan kode berikut:
 
-<pre>
+```
 const express = require('express');
 
 const app = express();
@@ -72,10 +72,10 @@ app.post('/:_id/webhook', webhook);
 app.listen(3000, () => {
     console.log('Server berjalan di http://localhost:3000');
 });
-</pre>
+```
 
 3. **Jalankan server**:
-   <pre>node webhook.js</pre>
+   ```node webhook.js```
 
 Sekarang server kamu sudah siap dan akan menerima pembaruan dari WhatsApp!
 
@@ -85,7 +85,7 @@ Berikut adalah contoh cara membuat webhook sederhana menggunakan PHP:
 
 1. **Buat file** bernama `webhook.php` dan tambahkan kode berikut:
 
-<pre>
+```
 <?php
 
 header('Content-Type: application/json');
@@ -111,7 +111,7 @@ if (isset($body["messages"]["upsert"])) {
 
 echo json_encode(["message" => "OK"]);
 ?>
-</pre>
+```
 
 2. **Jalankan server PHP** (misalnya dengan menggunakan XAMPP atau server lokal lainnya).
 
