@@ -3,61 +3,72 @@
 [![GitHub Release](https://img.shields.io/github/v/release/ndiing/whatsapp-client)](https://github.com/ndiing/whatsapp-client/releases)
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ndiing/whatsapp-client/total)](https://github.com/ndiing/whatsapp-client/releases)
 
-`whatsapp-client` adalah library yang memudahkan komunikasi dengan API Web WhatsApp. Library ini cocok untuk aplikasi yang belum mendukung soket dan sse.
+WhatsApp Client adalah aplikasi yang dirancang sebagai klien dan bertindak sebagai HTTP server untuk menjembatani WhatsApp dengan perangkat lunak yang dikembangkan. Aplikasi ini berkomunikasi menggunakan HTTP request dan webhook, serta dirancang untuk kebutuhan perangkat lunak yang belum mendukung teknologi socket dan server-sent event.
 
-## Cara Instal
+## Pemasangan
 
-1. **Download** dari [halaman rilis WhatsApp Client](https://github.com/ndiing/whatsapp-client/releases).
-2. **Install** aplikasi.
+Instalasi aplikasi cukup mudah, ikuti langkah-langkah berikut:
 
-   Setelah diinstal, aplikasi akan langsung berjalan dan muncul di ikon tray (pojok kanan bawah layar). Untuk melihat versi, arahkan kursor ke ikon. Untuk menghentikan aplikasi, klik kanan pada ikon dan pilih "Berhenti".
+1. Unduh aplikasi dari [halaman rilis](https://github.com/ndiing/whatsapp-client/releases).
+2. Instal aplikasi.
+
+> **Catatan:** Setelah instalasi selesai, aplikasi akan berjalan otomatis pada tray icon. Anda bisa mematikan aplikasi jika belum siap digunakan.
+
+## Penggunaan
+
+Berikut adalah penggunaan dasar aplikasi:
+
+1. **Hover** pada icon tray untuk melihat versi aplikasi.
+2. **Klik kanan** dan pilih **Berhenti** untuk mematikan aplikasi.
 
 ## Pengaturan
 
-Di folder `whatsapp-client`, ubah file `.env` dengan pengaturan berikut:
+Untuk mengatur variabel lingkungan (env), silakan buka jendela run (Windows + R) dan ketik `%appdata%/whatsapp-client`, lalu buka file `.env`. Berikut adalah nilai defaultnya:
 
-```
+<pre>
 HTTP_PORT=2000
 HTTPS_PORT=0
 HOSTNAME=localhost
-WHATSAPP_WEBHOOK=http://localhost:3000/:_id/webhook
-WHATSAPP_AUTOSTART=true
-```
+WHATSAPP_WEBHOOK=http://localhost:2000/api/whatsapp/:_id/webhook
+WHATSAPP_AUTOSTART=false
+</pre>
 
-- **`WHATSAPP_WEBHOOK`**: Sesuaikan URL webhook sesuai aplikasi yang kamu buat.
+1. Sesuaikan nilai `WHATSAPP_WEBHOOK` dengan perangkat lunak yang sedang dikembangkan.
+2. Ubah `WHATSAPP_AUTOSTART` ke `true` untuk menjalankan aplikasi secara otomatis.
 
-## Lokasi Data
+## REST API
 
-Sejak versi **2.0.0**, lokasi penyimpanan data aplikasi telah dipindahkan. Untuk mengakses folder data aplikasi:
+Contoh penggunaan REST API dapat dilihat pada tautan berikut:
 
-1. Tekan `Win + R`.
-2. Ketik `%appdata%/whatsapp-client` dan tekan **Enter**.
+1. [./http/whatsapp.http](./http/whatsapp.http) - Semua API (tidak perlu dicoba semuanya).
+2. [./http/whatsapp-message.http](./http/whatsapp-message.http) - API penanganan pesan.
+3. [./http/whatsapp-presence.http](./http/whatsapp-presence.http) - API penangan kehadiran.
+4. [./http/whatsapp-store.http](./http/whatsapp-store.http) - API untuk penanganan data.
 
-## Tutorial: Membuat Webhook dengan Express
+## Tutorial
 
-Berikut langkah-langkah untuk membuat webhook sederhana menggunakan Express:
+Berikut langkah-langkah penggunaan aplikasi:
 
-1. **Instal Express** jika belum terpasang:
-   ```npm install express```
+1. **Buat webhook** terlebih dahulu.
+2. **Atur webhook** pada file `.env`.
+3. **Buka aplikasi**.
 
-2. **Buat file** bernama `webhook.js` dan tambahkan kode berikut:
+Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook:
 
-```
-const express = require('express');
-
-const app = express();
-
+<pre>
 async function webhook(req, res, next) {
     try {
         if (req.body["connection.update"]) {
             const update = req.body["connection.update"];
+
             if (update.qr) {
-                console.log(`QR Code: https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
+                console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
             }
         }
 
         if (req.body["messages.upsert"]) {
             const upsert = req.body["messages.upsert"];
+
             if (upsert.type === "notify") {
                 for (const msg of upsert.messages) {
                     console.log(msg);
@@ -70,58 +81,4 @@ async function webhook(req, res, next) {
         next(error);
     }
 }
-
-app.use(express.json());
-app.post('/:_id/webhook', webhook);
-
-app.listen(3000, () => {
-    console.log('Server berjalan di http://localhost:3000');
-});
-```
-
-3. **Jalankan server**:
-   ```node webhook.js```
-
-Sekarang server kamu sudah siap dan akan menerima pembaruan dari WhatsApp!
-
-## Tutorial: Membuat Webhook dengan PHP
-
-Berikut langkah-langkah untuk membuat webhook sederhana menggunakan PHP:
-
-1. **Buat file** bernama `webhook.php` dan tambahkan kode berikut:
-
-```
-<?php
-
-header('Content-Type: application/json');
-$body = json_decode(file_get_contents('php://input'), true);
-
-if (isset($body["connection"]["update"])) {
-    $update = $body["connection"]["update"];
-    if (isset($update["qr"])) {
-        echo "QR Code: https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=" . urlencode($update["qr"]);
-    }
-}
-
-if (isset($body["messages"]["upsert"])) {
-    $upsert = $body["messages"]["upsert"];
-    if ($upsert["type"] === "notify") {
-        foreach ($upsert["messages"] as $msg) {
-            error_log(json_encode($msg));
-        }
-    }
-}
-
-echo json_encode(["message" => "OK"]);
-?>
-```
-
-2. **Jalankan server PHP** (misalnya dengan menggunakan XAMPP atau server lokal lainnya).
-
-Sekarang server kamu sudah siap dan akan menerima pembaruan dari WhatsApp!
-
-## Catatan
-
-- Aplikasi ini masih dalam tahap pengembangan dan akan diperbarui secara otomatis.
-- Contoh permintaan HTTP bisa dilihat di [lihat request](./http/whatsapp.http).
-- Panduan penggunaan dan tutorial sedang dibuat.
+</pre>
