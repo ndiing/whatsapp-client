@@ -124,9 +124,10 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/start
 Content-Type: application/json
 
 {}
-````
+```
 
-- **Untuk mengirim pesan** (teks sederhana):
+-   **Untuk mengirim pesan** (teks sederhana):
+
 ```js
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
@@ -137,7 +138,7 @@ Content-Type: application/json
         "text": "Kirim pesan teks sederhana!"
     }
 }
-````
+```
 
 -   **Untuk menghentikan API**:
 
@@ -157,15 +158,16 @@ POST http://localhost:2000/api/whatsapp/62123456789/start
 Content-Type: application/json
 
 {}
-````
+```
 
-- **Contoh 2**:
+-   **Contoh 2**:
+
 ```js
 POST http://localhost:2000/api/whatsapp/62987654321/start
 Content-Type: application/json
 
 {}
-````
+```
 
 ## Penanganan Error
 
