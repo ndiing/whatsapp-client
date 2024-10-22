@@ -157,7 +157,7 @@ Content-Type: application/json
 
 -   **Contoh 2**:
 
-```js
+```http
 POST http://localhost:2000/api/whatsapp/62987654321/start
 Content-Type: application/json
 
