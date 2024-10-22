@@ -47,14 +47,14 @@ app.post("/:_id/webhook", (req, res, next) => {
             }
         }
 
-        if (req.body["messages.reaction"])console.log(req.body["messages.reaction"])
-        if (req.body["message-receipt.update"])console.log(req.body["message-receipt.update"])
-        if (req.body["groups.upsert"])console.log(req.body["groups.upsert"])
-        if (req.body["groups.update"])console.log(req.body["groups.update"])
-        if (req.body["group-participants.update"])console.log(req.body["group-participants.update"])
-        if (req.body["blocklist.set"])console.log(req.body["blocklist.set"])
-        if (req.body["blocklist.update"])console.log(req.body["blocklist.update"])
-        if (req.body["call"])console.log(req.body["call"])
+        // if (req.body["messages.reaction"])console.log(req.body["messages.reaction"])
+        // if (req.body["message-receipt.update"])console.log(req.body["message-receipt.update"])
+        // if (req.body["groups.upsert"])console.log(req.body["groups.upsert"])
+        // if (req.body["groups.update"])console.log(req.body["groups.update"])
+        // if (req.body["group-participants.update"])console.log(req.body["group-participants.update"])
+        // if (req.body["blocklist.set"])console.log(req.body["blocklist.set"])
+        // if (req.body["blocklist.update"])console.log(req.body["blocklist.update"])
+        // if (req.body["call"])console.log(req.body["call"])
 
         res.json({ message: "OK" });
     } catch (error) {
