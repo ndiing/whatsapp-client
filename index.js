@@ -1,8 +1,13 @@
+process.on("uncaughtException", console.log);
+process.on("unhandledRejection", console.log);
+
 const express = require("express");
+const fetch = require("@ndiinginc/fetch");
 
 const app = express();
 
 app.use(express.json());
+
 app.post("/:_id/webhook", (req, res, next) => {
     try {
         if (req.body["connection.update"]) {
@@ -52,6 +57,50 @@ app.post("/:_id/webhook", (req, res, next) => {
     } catch (error) {
         next(error);
     }
+});
+
+app.post("/:_id/start", async (req, res, next) => {
+    const response = await fetch("http://localhost:2000/api/whatsapp/:_id/start", {
+        params: req.params,
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify({}),
+    });
+    const json = await response.json();
+    res.json(json);
+});
+
+app.post("/:_id/stop", async (req, res, next) => {
+    const response = await fetch("http://localhost:2000/api/whatsapp/:_id/stop", {
+        params: req.params,
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify({}),
+    });
+    const json = await response.json();
+    res.json(json);
+});
+
+app.post("/:_id/sendMessage", async (req, res, next) => {
+    const response = await fetch("http://localhost:2000/api/whatsapp/:_id/sendMessage", {
+        params: req.params,
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify({
+            jid: "6281935155404@s.whatsapp.net",
+            content: {
+                text: "Kirim pesan teks sederhana!",
+            },
+        }),
+    });
+    const json = await response.json();
+    res.json(json);
 });
 
 const server = app.listen(3000, "0.0.0.0", () => {
