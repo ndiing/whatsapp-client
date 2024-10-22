@@ -76,101 +76,101 @@ app.use(express.json());
 
 // Webhook endpoint untuk menangani berbagai event dari WhatsApp
 app.post("/:_id/webhook", (req, res, next) => {
-    try {
-        // Cek jika ada pembaruan koneksi
-        if (req.body["connection.update"]) {
-            const update = req.body["connection.update"];
-            console.log(update);
+try {
+// Cek jika ada pembaruan koneksi
+if (req.body["connection.update"]) {
+const update = req.body["connection.update"];
+console.log(update);
 
-            // Menangani QR code (jika ada)
-            if (update.qr) {
-                console.log(`QR Code: https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
-            }
-        }
+// Menangani QR code (jika ada)
+if (update.qr) {
+console.log(`QR Code: https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
+}
+}
 
-        // Menangani upsert chat
-        if (req.body["chats.upsert"]) {
-            console.log("Chats Upsert:", req.body["chats.upsert"]);
-        }
+// Menangani upsert chat
+if (req.body["chats.upsert"]) {
+console.log("Chats Upsert:", req.body["chats.upsert"]);
+}
 
-        // Menangani upsert pesan
-        if (req.body["messages.upsert"]) {
-            const upsert = req.body["messages.upsert"];
-            if (upsert.type === "notify") {
-                upsert.messages.forEach((msg) => {
-                    console.log("Pesan Masuk:", msg);
-                });
-            }
-        }
+// Menangani upsert pesan
+if (req.body["messages.upsert"]) {
+const upsert = req.body["messages.upsert"];
+if (upsert.type === "notify") {
+upsert.messages.forEach((msg) => {
+console.log("Pesan Masuk:", msg);
+});
+}
+}
 
-        res.json({ message: "OK" });
-    } catch (error) {
-        next(error);
-    }
+res.json({ message: "OK" });
+} catch (error) {
+next(error);
+}
 });
 
 // Menjalankan server pada port 3000 dan mengizinkan akses dari luar
 const server = app.listen(3000, "0.0.0.0", () => {
-    console.log(`Server berjalan di: ${server.address().address}:${server.address().port}`);
+console.log(`Server berjalan di: ${server.address().address}:${server.address().port}`);
 });
 ```
 
 5. **Mengakses API WhatsApp**:
 
-    - **Untuk menjalankan API**:
-        ```http
-        POST http://localhost:2000/api/whatsapp/{{_id}}/start
-        Content-Type: application/json
-        ```
+- **Untuk menjalankan API**:
+```http
+POST http://localhost:2000/api/whatsapp/{{_id}}/start
+Content-Type: application/json
+```
 
-    {}
+{}
 
-    ````
+````
 
-    - **Untuk mengirim pesan** (teks sederhana):
-      ```js
-      POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
-      Content-Type: application/json
+- **Untuk mengirim pesan** (teks sederhana):
+```js
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
+Content-Type: application/json
 
-    {
-    "jid": "{{jid}}@s.whatsapp.net",
-    "content": {
-    "text": "Kirim pesan teks sederhana!"
-    }
-    }
-    ````
+{
+"jid": "{{jid}}@s.whatsapp.net",
+"content": {
+"text": "Kirim pesan teks sederhana!"
+}
+}
+````
 
-    - **Untuk menghentikan API**:
-        ```http
-        POST http://localhost:2000/api/whatsapp/{{_id}}/stop
-        Content-Type: application/json
-        ```
+- **Untuk menghentikan API**:
+```http
+POST http://localhost:2000/api/whatsapp/{{_id}}/stop
+Content-Type: application/json
+```
 
-    {}
+{}
 
-    ```
+```
 
-    ```
+```
 
 6. **Menggunakan Beberapa Akun**: Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
 
-    - **Contoh 1**:
-        ```http
-        POST http://localhost:2000/api/whatsapp/62123456789/start
-        Content-Type: application/json
-        ```
+- **Contoh 1**:
+```http
+POST http://localhost:2000/api/whatsapp/62123456789/start
+Content-Type: application/json
+```
 
-    {}
+{}
 
-    ````
+````
 
-    - **Contoh 2**:
-      ```js
-      POST http://localhost:2000/api/whatsapp/62987654321/start
-      Content-Type: application/json
+- **Contoh 2**:
+```js
+POST http://localhost:2000/api/whatsapp/62987654321/start
+Content-Type: application/json
 
-    {}
-    ````
+{}
+````
 
 ## Penanganan Error
 
