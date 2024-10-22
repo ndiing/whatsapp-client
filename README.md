@@ -7,13 +7,13 @@ WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server unt
 
 ## Daftar Isi
 
-1.  [Pemasangan](#pemasangan)
-2.  [Penggunaan](#penggunaan)
-3.  [Pengaturan](#pengaturan)
-4.  [REST API](#rest-api)
-5.  [Tutorial](#tutorial)
-6.  [Penanganan Error](#penanganan-error)
-7.  [Informasi JID](#informasi-jid)
+1.  **[Pemasangan](#pemasangan)**
+2.  **[Penggunaan](#penggunaan)**
+3.  **[Pengaturan](#pengaturan)**
+4.  **[REST API](#rest-api)**
+5.  **[Tutorial](#tutorial)**
+6.  **[Penanganan Error](#penanganan-error)**
+7.  **[Informasi JID](#informasi-jid)**
 
 ## Pemasangan
 
