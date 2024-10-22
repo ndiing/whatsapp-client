@@ -1,9 +1,9 @@
 # WhatsApp Client
 
-[![GitHub Release](https://img.shields.io/github/v/release/ndiing/whatsapp-client)](https://github.com/ndiing/whatsapp-client/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/ndiing/whatsapp-client)](https://github.com/ndiing/whatsapp-client/releases)  
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ndiing/whatsapp-client/total)](https://github.com/ndiing/whatsapp-client/releases)
 
-WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server untuk menghubungkan WhatsApp dengan perangkat lunak yang Anda kembangkan. Aplikasi ini berkomunikasi melalui HTTP request dan webhook, dan dirancang untuk perangkat lunak yang belum mendukung teknologi socket dan server-sent event.
+WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server untuk menghubungkan WhatsApp dengan perangkat lunak yang Anda kembangkan. Aplikasi ini berkomunikasi melalui HTTP request dan webhook, serta dirancang untuk perangkat lunak yang belum mendukung teknologi socket dan server-sent event.
 
 ## Daftar Isi
 
@@ -17,19 +17,19 @@ WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server unt
 
 ## Pemasangan
 
-Instalasi aplikasi cukup mudah. Ikuti langkah-langkah berikut:
+Instalasi aplikasi sangat mudah. Ikuti langkah-langkah berikut:
 
 1. Unduh aplikasi dari [halaman rilis](https://github.com/ndiing/whatsapp-client/releases).
 2. Instal aplikasi.
 
-> **Catatan:** Setelah instalasi selesai, aplikasi akan berjalan otomatis pada tray icon. Anda bisa mematikan aplikasi jika belum siap digunakan.
+> **Catatan:** Setelah instalasi selesai, aplikasi akan berjalan otomatis di tray icon. Anda dapat mematikan aplikasi jika belum siap digunakan.
 
 ## Penggunaan
 
-Berikut adalah cara dasar penggunaan aplikasi:
+Berikut cara dasar penggunaan aplikasi:
 
-1. **Hover** pada icon tray untuk melihat versi aplikasi.
-2. **Klik kanan** pada icon tray dan pilih **Berhenti** untuk mematikan aplikasi.
+1. **Hover** pada ikon tray untuk melihat versi aplikasi.
+2. **Klik kanan** pada ikon tray dan pilih **Berhenti** untuk mematikan aplikasi.
 
 ## Pengaturan
 
@@ -39,7 +39,7 @@ Untuk mengatur variabel lingkungan (env), buka jendela run (Windows + R) dan ket
 HTTP_PORT=2000
 HTTPS_PORT=0
 HOSTNAME=localhost
-WHATSAPP_WEBHOOK=http://localhost:2000/api/whatsapp/:_id/webhook
+WHATSAPP_WEBHOOK=http://localhost:3000/:_id/webhook
 WHATSAPP_AUTOSTART=false
 </pre>
 
@@ -50,7 +50,7 @@ WHATSAPP_AUTOSTART=false
 
 ## REST API
 
-Berikut adalah contoh penggunaan REST API:
+Berikut adalah contoh penggunaan REST API yang dapat Anda temukan:
 
 1. [Penanganan chat](./http/whatsapp-chat.http)
 2. [Penanganan pesan](./http/whatsapp-message.http)
@@ -60,7 +60,7 @@ Berikut adalah contoh penggunaan REST API:
 
 ## Tutorial
 
-Berikut langkah-langkah penggunaan aplikasi:
+Langkah-langkah penggunaan aplikasi adalah sebagai berikut:
 
 1. **Buat webhook** terlebih dahulu.
 2. **Atur webhook** pada file `.env`.
@@ -69,7 +69,6 @@ Berikut langkah-langkah penggunaan aplikasi:
 
 <pre>
 const express = require("express");
-
 const app = express();
 
 // Middleware untuk menangani request JSON
@@ -97,7 +96,6 @@ app.post("/:_id/webhook", (req, res, next) => {
         // Menangani upsert pesan
         if (req.body["messages.upsert"]) {
             const upsert = req.body["messages.upsert"];
-
             if (upsert.type === "notify") {
                 upsert.messages.forEach(msg => {
                     console.log("Pesan Masuk:", msg);
@@ -180,3 +178,5 @@ Untuk informasi lebih lanjut, Anda dapat mengunjungi:
 
 - [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
 - [Node.js](https://nodejs.org/en/docs/)
+
+> **Catatan:** Jika Anda ingin melihat contoh kode server untuk penanganan webhook, silakan cek repositori ini.
