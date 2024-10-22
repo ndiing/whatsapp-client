@@ -16,7 +16,7 @@ POST http://localhost:3000/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "text": "Kirim pesan teks sederhana!"
     }
