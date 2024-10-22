@@ -92,12 +92,7 @@ app.post("/:_id/sendMessage", async (req, res, next) => {
         headers: {
             "content-type": "application/json",
         },
-        body: JSON.stringify({
-            jid: "6281935155404@s.whatsapp.net",
-            content: {
-                text: "Kirim pesan teks sederhana!",
-            },
-        }),
+        body: JSON.stringify(req.body),
     });
     const json = await response.json();
     res.json(json);
