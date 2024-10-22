@@ -65,28 +65,43 @@ Berikut langkah-langkah penggunaan aplikasi:
 1. **Buat webhook** terlebih dahulu.
 2. **Atur webhook** pada file `.env`.
 3. **Buka aplikasi**.
-4. **Penanganan QR Code**: Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook:
+4. **Penanganan QR Code**: Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook di server:
 
 <pre>
-async function webhook(req, res, next) {
+const express = require("express");
+
+const app = express();
+
+// Middleware untuk menangani request JSON
+app.use(express.json());
+
+// Webhook endpoint untuk menangani berbagai event dari WhatsApp
+app.post("/:_id/webhook", (req, res, next) => {
     try {
+        // Cek jika ada pembaruan koneksi
         if (req.body["connection.update"]) {
             const update = req.body["connection.update"];
+            console.log(update);
 
-            // Jika ada QR code, cetak URL untuk membuat QR code
+            // Menangani QR code (jika ada)
             if (update.qr) {
-                console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
+                console.log(`QR Code: https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
             }
         }
 
+        // Menangani upsert chat
+        if (req.body["chats.upsert"]) {
+            console.log("Chats Upsert:", req.body["chats.upsert"]);
+        }
+
+        // Menangani upsert pesan
         if (req.body["messages.upsert"]) {
             const upsert = req.body["messages.upsert"];
 
-            // Cetak pesan jika tipe notifikasi
             if (upsert.type === "notify") {
-                for (const msg of upsert.messages) {
-                    console.log(msg);
-                }
+                upsert.messages.forEach(msg => {
+                    console.log("Pesan Masuk:", msg);
+                });
             }
         }
 
@@ -94,7 +109,12 @@ async function webhook(req, res, next) {
     } catch (error) {
         next(error);
     }
-}
+});
+
+// Menjalankan server pada port 3000 dan mengizinkan akses dari luar
+const server = app.listen(3000, "0.0.0.0", () => {
+    console.log(`Server berjalan di: ${server.address().address}:${server.address().port}`);
+});
 </pre>
 
 5. **Mengakses API WhatsApp**:
