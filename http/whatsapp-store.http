@@ -19,7 +19,7 @@ Content-Type: application/json
 {
     "jid": "{{jid}}@s.whatsapp.net",
     "count": 1,
-    "cursor": null
+    "cursor": 0
 }
 
 ### 
@@ -28,6 +28,20 @@ Content-Type: application/json
 
 {
     "jid": "{{jid}}@s.whatsapp.net"
+}
+
+
+
+
+
+
+###
+POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "id": "3EB0F03F0BC778233E32DA"
 }
 
 
@@ -55,20 +69,6 @@ Content-Type: application/json
 
 {
     "messageId": ""
-}
-
-
-
-
-
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessage 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}@s.whatsapp.net",
-    "id": "3EB0ABDADB77FF1BE3F94A"
 }
 
 

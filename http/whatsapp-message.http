@@ -187,6 +187,38 @@ Content-Type: application/json
     }
 }
 
+### Menghapus Pesan
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "delete":  {
+            "remoteJid": "6281935155404@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0ABDADB77FF1BE3F94A"
+        }
+    }
+}
+
+### Memperbarui Pesan
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+        "text": "teks yang diperbarui ada di sini",
+        "edit": {
+            "remoteJid": "6281935155404@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB02EAFFF9463E2B39128"
+        }
+    }
+}
+
+
 
 
 

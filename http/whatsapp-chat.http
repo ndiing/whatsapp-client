@@ -1,0 +1,235 @@
+### Mengarsipkan chat
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "archive":true,
+        "lastMessages":[
+            {
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB04B854296672791FD57"
+            },
+            "message": {
+                "conversation": "Kirim pesan teks sederhana!"
+            },
+            "messageTimestamp": "1729561798",
+            "status": "READ",
+            "userReceipt": [
+                {
+                "userJid": "6281935155404@s.whatsapp.net",
+                "receiptTimestamp": "1729561799",
+                "readTimestamp": "1729562218",
+                "playedTimestamp": "0"
+                }
+            ]
+            }
+        ]
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Membisukan/menonaktifkan bisu chat
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "mute": 28800000
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Menonaktifkan bisu chat
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "mute": null
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Menandai chat sudah/belum dibaca
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "markRead":true,
+        "lastMessages":[
+            {
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB04B854296672791FD57"
+            },
+            "message": {
+                "conversation": "Kirim pesan teks sederhana!"
+            },
+            "messageTimestamp": "1729561798",
+            "status": "READ",
+            "userReceipt": [
+                {
+                "userJid": "6281935155404@s.whatsapp.net",
+                "receiptTimestamp": "1729561799",
+                "readTimestamp": "1729562218",
+                "playedTimestamp": "0"
+                }
+            ]
+            }
+        ]
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Menandai chat belum dibaca
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "markRead":false,
+        "lastMessages":[
+            {
+            "key": {
+                "remoteJid": "6281935155404@s.whatsapp.net",
+                "fromMe": true,
+                "id": "3EB04B854296672791FD57"
+            },
+            "message": {
+                "conversation": "Kirim pesan teks sederhana!"
+            },
+            "messageTimestamp": "1729561798",
+            "status": "READ",
+            "userReceipt": [
+                {
+                "userJid": "6281935155404@s.whatsapp.net",
+                "receiptTimestamp": "1729561799",
+                "readTimestamp": "1729562218",
+                "playedTimestamp": "0"
+                }
+            ]
+            }
+        ]
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Menghapus pesan untuk saya
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "clear":{
+            "messages": [
+                {
+                    "timestamp": "1729563899",
+                    "fromMe": true,
+                    "id": "3EB02E32057EA271EFFB5E"
+                }
+            ]
+        }
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Menghapus chat
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "delete":true,
+        "lastMessages":[
+            {
+                "key": {
+                    "remoteJid": "6281935155404@s.whatsapp.net",
+                    "fromMe": true,
+                    "id": "3EB044C66F89C43C174070"
+                },
+                "message": {
+                    "extendedTextMessage": {
+                    "text": "Kirim pesan dengan mention @adi",
+                    "contextInfo": {
+                        "mentionedJid": [
+                        "6281953656221@s.whatsapp.net"
+                        ]
+                    }
+                    }
+                },
+                "messageTimestamp": "1729563757",
+                "status": "READ"
+            }
+        ]
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Menyematkan/melepas chat
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "pin":true
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Melepas chat
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "pin":false
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Menandai/membatalkan bintang pada pesan
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "star":{
+            "messages":[
+                
+                {
+                   
+                    "fromMe": true,
+                    "id": "3EB0F03F0BC778233E32DA"
+                }
+            ],
+             "star": true
+        }
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}
+
+### Membatalkan bintang pada pesan
+POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+Content-Type: application/json
+
+{
+    "mod": {
+        "star":{
+            "messages":[
+                
+                {
+                    
+                    "fromMe": true,
+                    "id": "3EB0F03F0BC778233E32DA"
+                }
+            ],
+            "star": false
+        }
+    },
+    "jid": "{{jid}}@s.whatsapp.net"
+}

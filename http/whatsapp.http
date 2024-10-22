@@ -273,15 +273,6 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
-Content-Type: application/json
-
-{
-    "mod": "",
-    "jid": "{{jid}}@s.whatsapp.net"
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/cleanDirtyBits 
 Content-Type: application/json
 
