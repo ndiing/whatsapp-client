@@ -18,6 +18,6 @@ Content-Type: application/json
 {
     "jid": "{{jid}}",
     "content": {
-        "text": "Kirim pesan teks sederhana!"
+        "text": "Kirim pesan"
     }
 }
