@@ -3,7 +3,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "text": "Kirim pesan teks sederhana!"
     }
@@ -14,7 +14,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "text": "Kirim pesan balasan"
     },
@@ -41,11 +41,11 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "text": "Kirim pesan dengan mention @adi",
         "mentions": [
-            "{{jid2}}@s.whatsapp.net"
+            "{{jid2}}"
         ]
     }
 }
@@ -55,7 +55,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "location": {
             "degreesLatitude": -8.2155165,
@@ -69,7 +69,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "contacts": {
             "displayName": "Ridho Prasetya",
@@ -87,7 +87,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "react": {
             "text": "💖",
@@ -105,7 +105,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "text": "Halo, ini dikirim menggunakan https://github.com/ndiing/whatsapp-client"
     }
@@ -116,7 +116,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "video": "./media/video.mp4",
         "caption": "halo!",
@@ -129,7 +129,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "video": "./media/video.mp4",
         "caption": "halo!",
@@ -143,7 +143,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "audio": {
             "url": "./media/audio.mp3"
@@ -157,7 +157,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid2}}@s.whatsapp.net",
+    "jid": "{{jid2}}",
     "content": {
         "forward": {
             "key": {
@@ -192,7 +192,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "delete":  {
             "remoteJid": "6281935155404@s.whatsapp.net",
@@ -207,7 +207,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": {
         "text": "teks yang diperbarui ada di sini",
         "edit": {
@@ -280,7 +280,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/addMessageLabel
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "messageId": "",
     "labelId": ""
 }
@@ -290,7 +290,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/removeMessageLabel
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "messageId": "",
     "labelId": ""
 }
@@ -305,7 +305,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/relayMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "message": "",
     "__namedParameters": ""
 }
@@ -361,7 +361,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": "",
     "options": ""
 }

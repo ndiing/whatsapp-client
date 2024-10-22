@@ -17,7 +17,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "count": 1,
     "cursor": 0
 }
@@ -27,7 +27,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessages
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 
@@ -40,7 +40,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/loadMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "id": "3EB0F03F0BC778233E32DA"
 }
 
@@ -81,7 +81,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/mostRecentMessage
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -89,7 +89,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/fetchImageUrl
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -97,7 +97,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/fetchGroupMetadata
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###

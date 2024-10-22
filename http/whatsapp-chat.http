@@ -28,7 +28,7 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Membisukan/menonaktifkan bisu chat
@@ -39,7 +39,7 @@ Content-Type: application/json
     "mod": {
         "mute": 28800000
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Menonaktifkan bisu chat
@@ -50,7 +50,7 @@ Content-Type: application/json
     "mod": {
         "mute": null
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Menandai chat sudah/belum dibaca
@@ -83,7 +83,7 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Menandai chat belum dibaca
@@ -116,7 +116,7 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Menghapus pesan untuk saya
@@ -135,7 +135,7 @@ Content-Type: application/json
             ]
         }
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Menghapus chat
@@ -167,7 +167,7 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Menyematkan/melepas chat
@@ -178,7 +178,7 @@ Content-Type: application/json
     "mod": {
         "pin":true
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Melepas chat
@@ -189,7 +189,7 @@ Content-Type: application/json
     "mod": {
         "pin":false
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Menandai/membatalkan bintang pada pesan
@@ -210,7 +210,7 @@ Content-Type: application/json
              "star": true
         }
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ### Membatalkan bintang pada pesan
@@ -231,5 +231,5 @@ Content-Type: application/json
             "star": false
         }
     },
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }

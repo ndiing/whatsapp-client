@@ -123,7 +123,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "type": "",
     "timeoutMs": ""
 }
@@ -133,7 +133,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/onWhatsApp
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}@s.whatsapp.net"
+    "jids": "{{jid}}"
 }
 
 ###
@@ -147,7 +147,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/fetchStatus
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -155,7 +155,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicture
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "content": ""
 }
 
@@ -164,7 +164,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/removeProfilePicture
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -188,7 +188,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/updateBlockStatus
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "action": ""
 }
 
@@ -261,7 +261,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getBusinessProfile
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -286,7 +286,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/addLabel
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "labels": ""
 }
 
@@ -295,7 +295,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/addChatLabel
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "labelId": ""
 }
 
@@ -304,7 +304,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/removeChatLabel
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "labelId": ""
 }
 
@@ -313,7 +313,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/star
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "messages": "",
     "star": ""
 }
@@ -323,7 +323,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupMetadata
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -348,7 +348,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateSubject
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "subject": ""
 }
 
@@ -357,7 +357,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsList
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -365,7 +365,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsUpdate
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "participants": "",
     "action": ""
 }
@@ -375,7 +375,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "participants": "",
     "action": ""
 }
@@ -385,7 +385,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateDescription
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "description": ""
 }
 
@@ -394,7 +394,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupInviteCode
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -402,7 +402,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupRevokeInvite
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net"
+    "jid": "{{jid}}"
 }
 
 ###
@@ -443,7 +443,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupToggleEphemeral
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "ephemeralExpiration": ""
 }
 
@@ -452,7 +452,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "setting": ""
 }
 
@@ -461,7 +461,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupMemberAddMode
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "mode": ""
 }
 
@@ -470,7 +470,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/groupJoinApprovalMode
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "mode": ""
 }
 
@@ -485,7 +485,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getPrivacyTokens
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}@s.whatsapp.net"
+    "jids": "{{jid}}"
 }
 
 ###
@@ -493,7 +493,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/assertSessions
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}@s.whatsapp.net",
+    "jids": "{{jid}}",
     "force": ""
 }
 
@@ -502,7 +502,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendReceipt
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "participant": "",
     "messageIds": "",
     "type": ""
@@ -538,7 +538,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/createParticipantNodes
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}@s.whatsapp.net",
+    "jids": "{{jid}}",
     "message": "",
     "extraAttrs": ""
 }
@@ -548,7 +548,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getUSyncDevices
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}@s.whatsapp.net",
+    "jids": "{{jid}}",
     "useCache": "",
     "ignoreZeroDevices": ""
 }
@@ -601,7 +601,7 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/getCollections
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}@s.whatsapp.net",
+    "jid": "{{jid}}",
     "limit": ""
 }
 
