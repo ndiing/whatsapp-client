@@ -5,15 +5,16 @@
 
 WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan server HTTP untuk menghubungkan WhatsApp dengan perangkat lunak yang Anda kembangkan. Aplikasi ini memungkinkan Anda untuk mengirim dan menerima pesan WhatsApp melalui HTTP request dan webhook, dan dirancang untuk perangkat lunak yang belum mendukung teknologi socket dan server-sent events. 
 
+Dalam panduan ini, Anda akan belajar cara memasang, mengatur, dan menggunakan WhatsApp Client, serta menangani error yang mungkin terjadi.
+
 ## Daftar Isi
 
 - [Pemasangan](#pemasangan)
-- [Penggunaan](#penggunaan)
 - [Pengaturan](#pengaturan)
+- [Penggunaan](#penggunaan)
 - [REST API](#rest-api)
 - [Tutorial](#tutorial)
 - [Penanganan Error](#penanganan-error)
-- [Referensi](#referensi)
 
 ## Pemasangan
 
@@ -23,13 +24,6 @@ Instalasi aplikasi sangat mudah. Ikuti langkah-langkah berikut:
 2. Instal aplikasi di perangkat Anda.
 
 > **Catatan:** Setelah instalasi selesai, aplikasi akan berjalan otomatis di tray icon. Anda dapat mematikan aplikasi jika belum siap digunakan.
-
-## Penggunaan
-
-Berikut adalah cara dasar penggunaan aplikasi:
-
-1. **Hover** pada ikon tray untuk melihat versi aplikasi.
-2. **Klik kanan** pada ikon tray dan pilih **Berhenti** untuk mematikan aplikasi.
 
 ## Pengaturan
 
@@ -47,6 +41,13 @@ WHATSAPP_AUTOSTART=false
 
 1. **Sesuaikan** nilai `WHATSAPP_WEBHOOK` dengan perangkat lunak yang sedang Anda kembangkan. Pastikan endpoint ini dapat diakses oleh aplikasi Anda.
 2. **Ubah** `WHATSAPP_AUTOSTART` menjadi `true` jika Anda ingin aplikasi berjalan otomatis saat startup.
+
+## Penggunaan
+
+Berikut adalah cara dasar penggunaan aplikasi:
+
+1. **Hover** pada ikon tray untuk melihat versi aplikasi.
+2. **Klik kanan** pada ikon tray dan pilih **Berhenti** untuk mematikan aplikasi.
 
 ## REST API
 
@@ -171,12 +172,5 @@ Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa e
 1. **Error QR Code Tidak Muncul**: Pastikan Anda telah menangani webhook dengan benar. Periksa konsol untuk memastikan tidak ada kesalahan.
 2. **API Tidak Berfungsi**: Pastikan aplikasi berjalan di latar belakang dan variabel `WHATSAPP_WEBHOOK` telah diatur dengan benar.
 3. **Kesalahan Koneksi**: Periksa koneksi jaringan Anda dan pastikan port yang digunakan (default: 2000) tidak diblokir oleh firewall.
-
-## Referensi
-
-Untuk informasi lebih lanjut, Anda dapat mengunjungi:
-
--   [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
--   [Node.js](https://nodejs.org/en/docs/)
 
 > **Catatan:** Jika Anda ingin melihat contoh kode server untuk penanganan webhook, silakan cek repositori ini. Untuk sampel REST request, Anda bisa langsung buka di `./http/example.http`.
