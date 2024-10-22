@@ -50,13 +50,17 @@ WHATSAPP_AUTOSTART=false
 
 ## REST API
 
-Berikut adalah contoh penggunaan REST API yang dapat Anda temukan:
+Berikut adalah contoh penggunaan REST API yang tersedia:
 
-1. [Penanganan chat](./http/whatsapp-chat.http)
-2. [Penanganan pesan](./http/whatsapp-message.http)
-3. [Penanganan kehadiran](./http/whatsapp-presence.http)
-4. [Penanganan data](./http/whatsapp-store.http)
-5. [Semua API](./http/whatsapp.http)
+1. [example.http](./http/example.http) - Contoh umum
+2. [whatsapp-chat.http](./http/whatsapp-chat.http) - Penanganan chat
+3. [whatsapp-group.http](./http/whatsapp-group.http) - Penanganan grup
+4. [whatsapp-message.http](./http/whatsapp-message.http) - Penanganan pesan
+5. [whatsapp-misc.http](./http/whatsapp-misc.http) - Berbagai penanganan lainnya
+6. [whatsapp-presence.http](./http/whatsapp-presence.http) - Penanganan kehadiran
+7. [whatsapp-privacy.http](./http/whatsapp-privacy.http) - Penanganan privasi
+8. [whatsapp-store.http](./http/whatsapp-store.http) - Penanganan data
+9. [whatsapp.http](./http/whatsapp.http) - Semua API
 
 ## Tutorial
 
