@@ -223,6 +223,32 @@ Content-Type: application/json
 
 
 
+### Daftar Siaran & Cerita
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "6281938064470@broadcast",
+    "content": {
+        "image": {
+            "url": "https://raw.githubusercontent.com/ndiing/whatsapp-client/refs/heads/main/images/icon.png"
+        },
+        "caption": "whatsapp client"
+    },
+    "options": {
+        "backgroundColor": "",
+        "font": "",
+        "statusJidList": [],
+        "broadcast": true
+    }
+}
+
+
+
+
+
+
+
 
 ###
 POST http://localhost:2000/api/whatsapp/{{_id}}/generateMessageTag 
