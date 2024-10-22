@@ -7,13 +7,13 @@ WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server unt
 
 ## Daftar Isi
 
-- [Pemasangan](#pemasangan)
-- [Penggunaan](#penggunaan)
-- [Pengaturan](#pengaturan)
-- [REST API](#rest-api)
-- [Tutorial](#tutorial)
-- [Penanganan Error](#penanganan-error)
-- [Referensi](#referensi)
+-   [Pemasangan](#pemasangan)
+-   [Penggunaan](#penggunaan)
+-   [Pengaturan](#pengaturan)
+-   [REST API](#rest-api)
+-   [Tutorial](#tutorial)
+-   [Penanganan Error](#penanganan-error)
+-   [Referensi](#referensi)
 
 ## Pemasangan
 
@@ -118,30 +118,30 @@ const server = app.listen(3000, "0.0.0.0", () => {
 5. **Mengakses API WhatsApp**:
 
     - **Untuk menjalankan API**:
-    <pre>
-    POST http://localhost:2000/api/whatsapp/{{_id}}/start 
-    Content-Type: application/json
+      <pre>
+      POST http://localhost:2000/api/whatsapp/{{_id}}/start 
+      Content-Type: application/json
 
     {}
     </pre>
-    
+
     - **Untuk mengirim pesan** (teks sederhana):
-    <pre>
-    POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
-    Content-Type: application/json
+      <pre>
+      POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+      Content-Type: application/json
 
     {
-        "jid": "{{jid}}@s.whatsapp.net",
-        "content": {
-            "text": "Kirim pesan teks sederhana!"
-        }
+    "jid": "{{jid}}@s.whatsapp.net",
+    "content": {
+    "text": "Kirim pesan teks sederhana!"
+    }
     }
     </pre>
-    
+
     - **Untuk menghentikan API**:
-    <pre>
-    POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
-    Content-Type: application/json
+      <pre>
+      POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
+      Content-Type: application/json
 
     {}
     </pre>
@@ -149,17 +149,17 @@ const server = app.listen(3000, "0.0.0.0", () => {
 6. **Menggunakan Beberapa Akun**: Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
 
     - **Contoh 1**:
-    <pre>
-    POST http://localhost:2000/api/whatsapp/62123456789/start 
-    Content-Type: application/json
+      <pre>
+      POST http://localhost:2000/api/whatsapp/62123456789/start 
+      Content-Type: application/json
 
     {}
     </pre>
-    
+
     - **Contoh 2**:
-    <pre>
-    POST http://localhost:2000/api/whatsapp/62987654321/start 
-    Content-Type: application/json
+      <pre>
+      POST http://localhost:2000/api/whatsapp/62987654321/start 
+      Content-Type: application/json
 
     {}
     </pre>
@@ -176,7 +176,7 @@ Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa e
 
 Untuk informasi lebih lanjut, Anda dapat mengunjungi:
 
-- [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
-- [Node.js](https://nodejs.org/en/docs/)
+-   [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
+-   [Node.js](https://nodejs.org/en/docs/)
 
 > **Catatan:** Jika Anda ingin melihat contoh kode server untuk penanganan webhook, silakan cek repositori ini.
