@@ -11,7 +11,7 @@ app.use(express.json());
 app.post("/:_id/webhook", (req, res, next) => {
     try {
 
-        console.log(req.body)
+        // console.log(req.body)
 
         if (req.body["connection.update"]) {
             const update = req.body["connection.update"];
