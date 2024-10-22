@@ -170,21 +170,21 @@ Content-Type: application/json
 
 ## Penanganan Error
 
-Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa error umum dan solusinya:
+Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa error umum beserta solusinya:
 
-1. **Error QR Code Tidak Muncul**: Pastikan Anda telah menangani webhook dengan benar. Periksa konsol untuk memastikan tidak ada kesalahan.
-2. **API Tidak Berfungsi**: Pastikan aplikasi berjalan di background dan variabel `WHATSAPP_WEBHOOK` telah diatur dengan benar.
-3. **Kesalahan Koneksi**: Cek koneksi jaringan Anda dan pastikan bahwa port yang digunakan (default: 2000) tidak diblokir oleh firewall.
+1. **QR Code Tidak Muncul**: Periksa penanganan webhook dan konsol untuk kesalahan.
+2. **API Tidak Berfungsi**: Pastikan aplikasi berjalan di latar belakang dan `WHATSAPP_WEBHOOK` telah diatur dengan benar.
+3. **Kesalahan Koneksi**: Cek koneksi jaringan dan pastikan port (default: 2000) tidak diblokir firewall.
 
 ## Informasi JID
 
-**JID (WhatsApp ID)** adalah identifikasi unik yang digunakan oleh WhatsApp untuk berbagai entitas seperti pengguna, grup, dan lainnya. Berikut adalah beberapa contoh format JID yang digunakan di WhatsApp:
+**JID (WhatsApp ID)** adalah identifikasi unik di WhatsApp untuk pengguna dan grup. Berikut adalah format JID yang umum digunakan:
 
-1.  **JID pengguna pribadi (chat individu)**: `xyzxyzxyzxyz@c.us` - Digunakan untuk mengidentifikasi akun WhatsApp pribadi ketika berkomunikasi melalui chat individu.
-2.  **JID grup WhatsApp**: `xyzxyzxyzxyz@g.us` - Digunakan untuk mengidentifikasi grup WhatsApp dalam API dan komunikasi grup.
-3.  **JID pengguna dalam grup**: `xyzxyzxyzxyz@lid` - Digunakan untuk mengidentifikasi pengguna tertentu di dalam grup WhatsApp.
-4.  **JID WhatsApp newsletter**: `xyzxyzxyzxyz@newsletter` - Digunakan untuk entitas yang digunakan oleh WhatsApp atau saluran tertentu yang menggunakan fitur newsletter resmi.
-5.  **JID pengguna untuk broadcast**: `62123456789@broadcast` - Digunakan untuk mengidentifikasi penerima dalam siaran broadcast.
-6.  **JID pengguna individu**: `62123456789@s.whatsapp.net` - Digunakan untuk mengidentifikasi pengguna melalui nomor telepon di jaringan WhatsApp.
-7.  **JID untuk panggilan**: `62123456789@call` - Digunakan untuk mengidentifikasi akun pengguna dalam konteks panggilan di WhatsApp.
-8.  **JID status WhatsApp**: `status@broadcast` - Digunakan untuk melihat dan mengidentifikasi status WhatsApp.
+1. **Pengguna pribadi**: `xyzxyzxyzxyz@c.us` - Untuk chat individu.
+2. **Grup WhatsApp**: `xyzxyzxyzxyz@g.us` - Untuk mengidentifikasi grup.
+3. **Pengguna dalam grup**: `xyzxyzxyzxyz@lid` - Untuk pengguna tertentu dalam grup.
+4. **Newsletter**: `xyzxyzxyzxyz@newsletter` - Untuk entitas atau saluran newsletter.
+5. **Broadcast**: `62123456789@broadcast` - Untuk penerima dalam siaran.
+6. **Pengguna individu**: `62123456789@s.whatsapp.net` - Identifikasi melalui nomor telepon.
+7. **Panggilan**: `62123456789@call` - Untuk panggilan di WhatsApp.
+8. **Status**: `status@broadcast` - Untuk melihat status WhatsApp.
