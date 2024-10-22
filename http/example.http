@@ -1,18 +1,18 @@
 ###
-POST http://localhost:3000/{{_id}}/start 
+POST http://127.0.0.1:3000/{{_id}}/start 
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:3000/{{_id}}/stop 
+POST http://127.0.0.1:3000/{{_id}}/stop 
 Content-Type: application/json
 
 {}
 
 
 ### Kirim pesan teks sederhana!
-POST http://localhost:3000/{{_id}}/sendMessage 
+POST http://127.0.0.1:3000/{{_id}}/sendMessage 
 Content-Type: application/json
 
 {

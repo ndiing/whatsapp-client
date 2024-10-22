@@ -10,6 +10,9 @@ app.use(express.json());
 
 app.post("/:_id/webhook", (req, res, next) => {
     try {
+
+        console.log(req.body)
+
         if (req.body["connection.update"]) {
             const update = req.body["connection.update"];
 
@@ -60,7 +63,7 @@ app.post("/:_id/webhook", (req, res, next) => {
 });
 
 app.post("/:_id/start", async (req, res, next) => {
-    const response = await fetch("http://localhost:2000/api/whatsapp/:_id/start", {
+    const response = await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/start", {
         params: req.params,
         method: "POST",
         headers: {
@@ -73,7 +76,7 @@ app.post("/:_id/start", async (req, res, next) => {
 });
 
 app.post("/:_id/stop", async (req, res, next) => {
-    const response = await fetch("http://localhost:2000/api/whatsapp/:_id/stop", {
+    const response = await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/stop", {
         params: req.params,
         method: "POST",
         headers: {
@@ -88,7 +91,7 @@ app.post("/:_id/stop", async (req, res, next) => {
 app.post("/:_id/sendMessage", async (req, res, next) => {
     // mengirim pesan, seolah-olah sedang mengetik
 
-    await fetch("http://localhost:2000/api/whatsapp/:_id/presenceSubscribe", {
+    await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/presenceSubscribe", {
         params: req.params,
         method: "POST",
         headers: {
@@ -99,7 +102,7 @@ app.post("/:_id/sendMessage", async (req, res, next) => {
         }),
     });
 
-    await fetch("http://localhost:2000/api/whatsapp/:_id/sendPresenceUpdate", {
+    await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/sendPresenceUpdate", {
         params: req.params,
         method: "POST",
         headers: {
@@ -113,7 +116,7 @@ app.post("/:_id/sendMessage", async (req, res, next) => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000 * 3)); // delay mengetik 3detik
 
-    await fetch("http://localhost:2000/api/whatsapp/:_id/sendPresenceUpdate", {
+    await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/sendPresenceUpdate", {
         params: req.params,
         method: "POST",
         headers: {
@@ -127,7 +130,7 @@ app.post("/:_id/sendMessage", async (req, res, next) => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000 * 2)); // delay sebelum kirim 2detik
 
-    const response = await fetch("http://localhost:2000/api/whatsapp/:_id/sendMessage", {
+    const response = await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/sendMessage", {
         params: req.params,
         method: "POST",
         headers: {
