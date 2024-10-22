@@ -14,6 +14,7 @@ app.post("/:_id/webhook", (req, res, next) => {
                 console.log(`https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(update.qr)}`);
             }
         }
+
         // if (req.body["creds.update"])console.log(req.body["creds.update"])
         // if (req.body["messaging-history.set"])console.log(req.body["messaging-history.set"])
         // if (req.body["chats.upsert"]) console.log(req.body["chats.upsert"]);
