@@ -173,4 +173,4 @@ Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa e
 2. **API Tidak Berfungsi**: Pastikan aplikasi berjalan di latar belakang dan variabel `WHATSAPP_WEBHOOK` telah diatur dengan benar.
 3. **Kesalahan Koneksi**: Periksa koneksi jaringan Anda dan pastikan port yang digunakan (default: 2000) tidak diblokir oleh firewall.
 
-> **Catatan:** Jika Anda ingin melihat contoh kode server untuk penanganan webhook, silakan cek repositori ini. Untuk sampel REST request, Anda bisa langsung buka di `./http/example.http`.
+> **Catatan:** Jika Anda ingin melihat contoh kode server untuk penanganan webhook, silakan cek repositori ini. Untuk sampel REST request, Anda bisa langsung buka di [example](./http/example.http).
