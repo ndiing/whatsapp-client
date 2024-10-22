@@ -228,18 +228,38 @@ POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "6281938064470@broadcast",
+    "jid": "status@broadcast",
     "content": {
-        "image": {
-            "url": "https://raw.githubusercontent.com/ndiing/whatsapp-client/refs/heads/main/images/icon.png"
-        },
-        "caption": "whatsapp client"
+        "text": "Test1"
     },
     "options": {
-        "backgroundColor": "",
-        "font": "",
-        "statusJidList": [],
+        "backgroundColor": "#212121",
+        "font": 3,
+        "statusJidList": [
+            "6281938064470@s.whatsapp.net",
+            "{{jid}}",
+            "{{jid2}}"
+        ],
         "broadcast": true
+    }
+}
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+Content-Type: application/json
+
+{
+    "jid": "status@broadcast",
+    "content": {
+        "text": "Test2"
+    },
+    "options": {
+        "backgroundColor": "#212121",
+        "font": 3,
+        "statusJidList": [
+            "6281938064470@s.whatsapp.net",
+            "{{jid}}",
+            "{{jid2}}"
+        ]
     }
 }
 
