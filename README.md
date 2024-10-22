@@ -35,13 +35,13 @@ Berikut cara dasar penggunaan aplikasi:
 
 Untuk mengatur variabel lingkungan (env), buka jendela run (Windows + R) dan ketik `%appdata%/whatsapp-client`, lalu buka file `.env`. Berikut adalah nilai defaultnya:
 
-<pre>
+```js
 HTTP_PORT=2000
 HTTPS_PORT=0
 HOSTNAME=localhost
 WHATSAPP_WEBHOOK=http://localhost:3000/:_id/webhook
 WHATSAPP_AUTOSTART=false
-</pre>
+```
 
 ### Langkah Pengaturan
 
@@ -67,7 +67,7 @@ Langkah-langkah penggunaan aplikasi adalah sebagai berikut:
 3. **Buka aplikasi**.
 4. **Penanganan QR Code**: Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook di server:
 
-<pre>
+```js
 const express = require("express");
 const app = express();
 
@@ -97,7 +97,7 @@ app.post("/:_id/webhook", (req, res, next) => {
         if (req.body["messages.upsert"]) {
             const upsert = req.body["messages.upsert"];
             if (upsert.type === "notify") {
-                upsert.messages.forEach(msg => {
+                upsert.messages.forEach((msg) => {
                     console.log("Pesan Masuk:", msg);
                 });
             }
@@ -113,21 +113,23 @@ app.post("/:_id/webhook", (req, res, next) => {
 const server = app.listen(3000, "0.0.0.0", () => {
     console.log(`Server berjalan di: ${server.address().address}:${server.address().port}`);
 });
-</pre>
+```
 
 5. **Mengakses API WhatsApp**:
 
     - **Untuk menjalankan API**:
-      <pre>
-      POST http://localhost:2000/api/whatsapp/{{_id}}/start 
-      Content-Type: application/json
+        ```http
+        POST http://localhost:2000/api/whatsapp/{{_id}}/start
+        Content-Type: application/json
+        ```
 
     {}
-    </pre>
+
+    ````
 
     - **Untuk mengirim pesan** (teks sederhana):
-      <pre>
-      POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage 
+      ```js
+      POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
       Content-Type: application/json
 
     {
@@ -136,33 +138,39 @@ const server = app.listen(3000, "0.0.0.0", () => {
     "text": "Kirim pesan teks sederhana!"
     }
     }
-    </pre>
+    ````
 
     - **Untuk menghentikan API**:
-      <pre>
-      POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
-      Content-Type: application/json
+        ```http
+        POST http://localhost:2000/api/whatsapp/{{_id}}/stop
+        Content-Type: application/json
+        ```
 
     {}
-    </pre>
+
+    ```
+
+    ```
 
 6. **Menggunakan Beberapa Akun**: Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
 
     - **Contoh 1**:
-      <pre>
-      POST http://localhost:2000/api/whatsapp/62123456789/start 
-      Content-Type: application/json
+        ```http
+        POST http://localhost:2000/api/whatsapp/62123456789/start
+        Content-Type: application/json
+        ```
 
     {}
-    </pre>
+
+    ````
 
     - **Contoh 2**:
-      <pre>
-      POST http://localhost:2000/api/whatsapp/62987654321/start 
+      ```js
+      POST http://localhost:2000/api/whatsapp/62987654321/start
       Content-Type: application/json
 
     {}
-    </pre>
+    ````
 
 ## Penanganan Error
 
