@@ -88,11 +88,6 @@ app.post("/:_id/webhook", (req, res, next) => {
             }
         }
 
-        // Menangani upsert chat
-        if (req.body["chats.upsert"]) {
-            console.log("Chats Upsert:", req.body["chats.upsert"]);
-        }
-
         // Menangani upsert pesan
         if (req.body["messages.upsert"]) {
             const upsert = req.body["messages.upsert"];
