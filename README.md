@@ -53,11 +53,15 @@ Berikut adalah cara dasar penggunaan aplikasi:
 
 Berikut adalah beberapa contoh penggunaan REST API yang dapat Anda temukan:
 
-1. [Penanganan chat](./http/whatsapp-chat.http)
-2. [Penanganan pesan](./http/whatsapp-message.http)
-3. [Penanganan kehadiran](./http/whatsapp-presence.http)
-4. [Penanganan data](./http/whatsapp-store.http)
-5. [Semua API](./http/whatsapp.http)
+1. [Contoh API](./http/example.http)
+2. [Penanganan chat](./http/whatsapp-chat.http)
+3. [Penanganan group](./http/whatsapp-group.http)
+4. [Penanganan message](./http/whatsapp-message.http)
+5. [API lain-lain](./http/whatsapp-misc.http)
+6. [Penanganan presence](./http/whatsapp-presence.http)
+7. [Penanganan privacy](./http/whatsapp-privacy.http)
+8. [Penanganan store](./http/whatsapp-store.http)
+9. [Semua API](./http/whatsapp.http)
 
 ## Tutorial
 
