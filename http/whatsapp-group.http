@@ -1,0 +1,232 @@
+### Untuk membuat grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupCreate 
+Content-Type: application/json
+
+{
+    "subject": "grup",
+    "participants": [
+        "{{jid}}",
+        "{{jid2}}"
+    ]
+}
+
+
+
+
+
+
+### Untuk menambah/menghapus orang ke grup atau menurunkan/menaikkan pangkat orang
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "participants": [
+        "{{jid2}}"
+    ],
+    "action": "add"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "participants": [
+        "{{jid2}}"
+    ],
+    "action": "remove"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "participants": [
+        "{{jid}}"
+    ],
+    "action": "demote"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "participants": [
+        "{{jid}}"
+    ],
+    "action": "promote"
+}
+
+
+
+
+
+
+### Untuk mengubah subjek grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateSubject 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "subject": "subjek grup"
+}
+
+### Untuk mengubah deskripsi grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateDescription 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "description": "deskripsi grup"
+}
+
+
+
+
+
+
+### Untuk mengubah pengaturan grup, hanya izinkan admin untuk mengirim pesan
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "setting": "announcement"
+}
+
+### Izinkan semua orang untuk mengirim pesan
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "setting": "not_announcement"
+}
+
+### Izinkan semua orang untuk mengubah pengaturan grup -- seperti foto profil, dll.
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "setting": "unlocked"
+}
+
+### Hanya izinkan admin untuk mengubah pengaturan grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "setting": "locked"
+}
+
+
+
+
+
+
+### Untuk keluar dari grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupLeave 
+Content-Type: application/json
+
+{
+    "id": "120363348813803535@g.us"
+}
+
+### Untuk mendapatkan kode undangan untuk grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupInviteCode 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us"
+}
+
+### Untuk mencabut kode undangan dalam grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupRevokeInvite 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us"
+}
+
+### Untuk menanyakan metadata grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupMetadata 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us"
+}
+
+### Untuk bergabung dengan grup menggunakan kode undangan
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupAcceptInvite 
+Content-Type: application/json
+
+{
+    "code": "IIgu8UNodjb0Ey8E4IAwSc"
+}
+
+### Untuk mendapatkan info grup berdasarkan kode undangan
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupGetInviteInfo 
+Content-Type: application/json
+
+{
+    "code": "IIgu8UNodjb0Ey8E4IAwSc"
+}
+
+# ### Untuk bergabung dengan grup menggunakan groupInviteMessage
+# POST http://localhost:2000/api/whatsapp/{{_id}}/groupAcceptInviteV4 
+# Content-Type: application/json
+
+# {
+#     "args": ""
+# }
+
+### Untuk mendapatkan daftar permintaan bergabung
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsList 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us"
+}
+
+
+
+
+
+
+### Untuk menyetujui/menggagalkan permintaan bergabung
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "participants": [
+        
+    ],
+    "action": "approve"
+}
+
+
+### Untuk menyetujui/menggagalkan permintaan bergabung
+POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsUpdate 
+Content-Type: application/json
+
+{
+    "jid": "120363348813803535@g.us",
+    "participants": [
+        
+    ],
+    "action": "reject"
+}
+
+
+
+
+

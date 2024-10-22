@@ -1,0 +1,101 @@
+### Untuk memeriksa apakah ID yang diberikan ada di WhatsApp
+POST http://localhost:2000/api/whatsapp/{{_id}}/onWhatsApp 
+Content-Type: application/json
+
+{
+    "jids": "{{jid}}"
+}
+
+
+### Untuk mendapatkan status seseorang
+POST http://localhost:2000/api/whatsapp/{{_id}}/fetchStatus 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}"
+}
+
+
+### Untuk mengubah status profil Anda
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileStatus 
+Content-Type: application/json
+
+{
+    "status": "Ada"
+}
+
+
+### Untuk mengubah nama profil Anda
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileName 
+Content-Type: application/json
+
+{
+    "name": "Ndiing"
+}
+
+
+### Untuk mendapatkan foto profil seseorang/kelompok, untuk gambar resolusi rendah
+POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}"
+}
+
+
+### Untuk gambar resolusi tinggi
+POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}",
+    "type": "image"
+}
+
+
+### Untuk mengubah foto profil Anda atau kelompok
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicture 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}",
+    "content": { "url": "./content.jpeg" }
+}
+
+
+### Untuk menghapus foto profil Anda atau kelompok
+POST http://localhost:2000/api/whatsapp/{{_id}}/removeProfilePicture 
+Content-Type: application/json
+
+{
+    "jid": "{{jid}}"
+}
+
+
+### Untuk memblokir atau membuka blokir pengguna
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateBlockStatus 
+Content-Type: application/json
+
+{
+    "jid": "{{jid2}}",
+    "action": "block"
+}
+
+
+### Untuk membuka blokir pengguna
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateBlockStatus 
+Content-Type: application/json
+
+{
+    "jid": "{{jid2}}",
+    "action": "unblock"
+}
+
+
+### Untuk mendapatkan profil bisnis, seperti deskripsi atau kategori
+POST http://localhost:2000/api/whatsapp/{{_id}}/getBusinessProfile 
+Content-Type: application/json
+
+{
+    "jid": "{{jid2}}"
+}

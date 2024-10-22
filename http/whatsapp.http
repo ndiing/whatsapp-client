@@ -103,37 +103,11 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/fetchPrivacySettings 
-Content-Type: application/json
-
-{
-    "force": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/appPatch 
 Content-Type: application/json
 
 {
     "patchCreate": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "type": "",
-    "timeoutMs": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/onWhatsApp 
-Content-Type: application/json
-
-{
-    "jids": "{{jid}}"
 }
 
 ###
@@ -143,125 +117,11 @@ Content-Type: application/json
 {}
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/fetchStatus 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}"
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicture 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "content": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/removeProfilePicture 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}"
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileStatus 
-Content-Type: application/json
-
-{
-    "status": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileName 
-Content-Type: application/json
-
-{
-    "name": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateBlockStatus 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "action": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/updateCallPrivacy 
 Content-Type: application/json
 
 {
     "value": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateLastSeenPrivacy 
-Content-Type: application/json
-
-{
-    "value": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateOnlinePrivacy 
-Content-Type: application/json
-
-{
-    "value": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicturePrivacy 
-Content-Type: application/json
-
-{
-    "value": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateStatusPrivacy 
-Content-Type: application/json
-
-{
-    "value": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateReadReceiptsPrivacy 
-Content-Type: application/json
-
-{
-    "value": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateGroupsAddPrivacy 
-Content-Type: application/json
-
-{
-    "value": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateDefaultDisappearingMode 
-Content-Type: application/json
-
-{
-    "duration": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/getBusinessProfile 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}"
 }
 
 ###
@@ -319,101 +179,6 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupMetadata 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}"
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupCreate 
-Content-Type: application/json
-
-{
-    "subject": "",
-    "participants": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupLeave 
-Content-Type: application/json
-
-{
-    "id": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateSubject 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "subject": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsList 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}"
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsUpdate 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "participants": "",
-    "action": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "participants": "",
-    "action": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateDescription 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "description": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupInviteCode 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}"
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRevokeInvite 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}"
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupAcceptInvite 
-Content-Type: application/json
-
-{
-    "code": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/groupRevokeInviteV4 
 Content-Type: application/json
 
@@ -423,37 +188,12 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupAcceptInviteV4 
-Content-Type: application/json
-
-{
-    "args": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupGetInviteInfo 
-Content-Type: application/json
-
-{
-    "code": ""
-}
-
-###
 POST http://localhost:2000/api/whatsapp/{{_id}}/groupToggleEphemeral 
 Content-Type: application/json
 
 {
     "jid": "{{jid}}",
     "ephemeralExpiration": ""
-}
-
-###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
-Content-Type: application/json
-
-{
-    "jid": "{{jid}}",
-    "setting": ""
 }
 
 ###

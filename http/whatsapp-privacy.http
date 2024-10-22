@@ -1,0 +1,205 @@
+### Untuk mendapatkan pengaturan privasi
+POST http://localhost:2000/api/whatsapp/{{_id}}/fetchPrivacySettings 
+Content-Type: application/json
+
+{
+    "force": true
+}
+
+
+
+### Untuk memperbarui privasi LastSeen
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateLastSeenPrivacy 
+Content-Type: application/json
+
+{
+    "value": "all"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateLastSeenPrivacy 
+Content-Type: application/json
+
+{
+    "value": "contacts"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateLastSeenPrivacy 
+Content-Type: application/json
+
+{
+    "value": "contact_blacklist"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateLastSeenPrivacy 
+Content-Type: application/json
+
+{
+    "value": "none"
+}
+
+
+
+### Untuk memperbarui privasi Online
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateOnlinePrivacy 
+Content-Type: application/json
+
+{
+    "value": "all"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateOnlinePrivacy 
+Content-Type: application/json
+
+{
+    "value": "match_last_seen"
+}
+
+
+
+### Untuk memperbarui privasi Foto Profil
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicturePrivacy 
+Content-Type: application/json
+
+{
+    "value": "all"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicturePrivacy 
+Content-Type: application/json
+
+{
+    "value": "contacts"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicturePrivacy 
+Content-Type: application/json
+
+{
+    "value": "contact_blacklist"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicturePrivacy 
+Content-Type: application/json
+
+{
+    "value": "none"
+}
+
+
+
+### Untuk memperbarui privasi Status
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateStatusPrivacy 
+Content-Type: application/json
+
+{
+    "value": "all"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateStatusPrivacy 
+Content-Type: application/json
+
+{
+    "value": "contacts"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateStatusPrivacy 
+Content-Type: application/json
+
+{
+    "value": "contact_blacklist"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateStatusPrivacy 
+Content-Type: application/json
+
+{
+    "value": "none"
+}
+
+
+
+### Untuk memperbarui privasi Read Receipts
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateReadReceiptsPrivacy 
+Content-Type: application/json
+
+{
+    "value": "all"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateReadReceiptsPrivacy 
+Content-Type: application/json
+
+{
+    "value": "none"
+}
+
+
+
+### Untuk memperbarui privasi Tambah Grup
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateGroupsAddPrivacy 
+Content-Type: application/json
+
+{
+    "value": "all"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateGroupsAddPrivacy 
+Content-Type: application/json
+
+{
+    "value": "contacts"
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateGroupsAddPrivacy 
+Content-Type: application/json
+
+{
+    "value": "contact_blacklist"
+}
+
+
+
+### Untuk memperbarui Mode Menghilang Default
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateDefaultDisappearingMode 
+Content-Type: application/json
+
+{
+    "duration": 86400 
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateDefaultDisappearingMode 
+Content-Type: application/json
+
+{
+    "duration": 604800  
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateDefaultDisappearingMode 
+Content-Type: application/json
+
+{
+    "duration": 7776000   
+}
+
+### 
+POST http://localhost:2000/api/whatsapp/{{_id}}/updateDefaultDisappearingMode 
+Content-Type: application/json
+
+{
+    "duration": 0   
+}
