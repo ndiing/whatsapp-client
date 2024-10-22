@@ -52,10 +52,11 @@ WHATSAPP_AUTOSTART=false
 
 Berikut adalah contoh penggunaan REST API:
 
-1. [Semua API](./http/whatsapp.http)
+1. [Penanganan chat](./http/whatsapp-chat.http)
 2. [Penanganan pesan](./http/whatsapp-message.http)
-3. [Kehadiran pengguna](./http/whatsapp-presence.http)
+3. [Penanganan kehadiran](./http/whatsapp-presence.http)
 4. [Penanganan data](./http/whatsapp-store.http)
+5. [Semua API](./http/whatsapp.http)
 
 ## Tutorial
 
