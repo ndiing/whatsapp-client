@@ -7,13 +7,13 @@ WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server unt
 
 ## Daftar Isi
 
--   [Pemasangan](#pemasangan)
--   [Penggunaan](#penggunaan)
--   [Pengaturan](#pengaturan)
--   [REST API](#rest-api)
--   [Tutorial](#tutorial)
--   [Penanganan Error](#penanganan-error)
--   [Referensi](#referensi)
+- [Pemasangan](#pemasangan)
+- [Penggunaan](#penggunaan)
+- [Pengaturan](#pengaturan)
+- [REST API](#rest-api)
+- [Tutorial](#tutorial)
+- [Penanganan Error](#penanganan-error)
+- [Referensi](#referensi)
 
 ## Pemasangan
 
@@ -35,13 +35,13 @@ Berikut cara dasar penggunaan aplikasi:
 
 Untuk mengatur variabel lingkungan (env), buka jendela run (Windows + R) dan ketik `%appdata%/whatsapp-client`, lalu buka file `.env`. Berikut adalah nilai defaultnya:
 
-```js
+<pre>
 HTTP_PORT=2000
 HTTPS_PORT=0
 HOSTNAME=localhost
 WHATSAPP_WEBHOOK=http://localhost:3000/:_id/webhook
 WHATSAPP_AUTOSTART=false
-```
+</pre>
 
 ### Langkah Pengaturan
 
@@ -52,11 +52,11 @@ WHATSAPP_AUTOSTART=false
 
 Berikut adalah contoh penggunaan REST API yang dapat Anda temukan:
 
-1. [Penanganan chat](./http/whatsapp-chat.http)
-2. [Penanganan pesan](./http/whatsapp-message.http)
-3. [Penanganan kehadiran](./http/whatsapp-presence.http)
-4. [Penanganan data](./http/whatsapp-store.http)
-5. [Semua API](./http/whatsapp.http)
+- [Penanganan chat](./http/whatsapp-chat.http)
+- [Penanganan pesan](./http/whatsapp-message.http)
+- [Penanganan kehadiran](./http/whatsapp-presence.http)
+- [Penanganan data](./http/whatsapp-store.http)
+- [Semua API](./http/whatsapp.http)
 
 ## Tutorial
 
@@ -67,7 +67,7 @@ Langkah-langkah penggunaan aplikasi adalah sebagai berikut:
 3. **Buka aplikasi**.
 4. **Penanganan QR Code**: Pastikan untuk menangani QR code untuk login dan pesan masuk. Berikut adalah contoh kode untuk menangani webhook di server:
 
-```js
+<pre>
 const express = require("express");
 const app = express();
 
@@ -108,22 +108,22 @@ app.post("/:_id/webhook", (req, res, next) => {
 const server = app.listen(3000, "0.0.0.0", () => {
     console.log(`Server berjalan di: ${server.address().address}:${server.address().port}`);
 });
-```
+</pre>
 
 5. **Mengakses API WhatsApp**:
 
--   **Untuk menjalankan API**:
+- **Untuk menjalankan API**:
 
-```http
+<pre>
 POST http://localhost:2000/api/whatsapp/{{_id}}/start
 Content-Type: application/json
 
 {}
-```
+</pre>
 
--   **Untuk mengirim pesan** (teks sederhana):
+- **Untuk mengirim pesan** (teks sederhana):
 
-```js
+<pre>
 POST http://localhost:2000/api/whatsapp/{{_id}}/sendMessage
 Content-Type: application/json
 
@@ -133,36 +133,36 @@ Content-Type: application/json
         "text": "Kirim pesan teks sederhana!"
     }
 }
-```
+</pre>
 
--   **Untuk menghentikan API**:
+- **Untuk menghentikan API**:
 
-```http
+<pre>
 POST http://localhost:2000/api/whatsapp/{{_id}}/stop
 Content-Type: application/json
 
 {}
-```
+</pre>
 
 6. **Menggunakan Beberapa Akun**: Jika Anda ingin menggunakan lebih dari satu akun, ubah `{{_id}}` dengan ID akun yang sesuai. Berikut adalah contohnya:
 
--   **Contoh 1**:
+- **Contoh 1**:
 
-```http
+<pre>
 POST http://localhost:2000/api/whatsapp/62123456789/start
 Content-Type: application/json
 
 {}
-```
+</pre>
 
--   **Contoh 2**:
+- **Contoh 2**:
 
-```http
+<pre>
 POST http://localhost:2000/api/whatsapp/62987654321/start
 Content-Type: application/json
 
 {}
-```
+</pre>
 
 ## Penanganan Error
 
@@ -176,7 +176,7 @@ Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa e
 
 Untuk informasi lebih lanjut, Anda dapat mengunjungi:
 
--   [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
--   [Node.js](https://nodejs.org/en/docs/)
+- [Dokumentasi WhatsApp Web](https://web.whatsapp.com/)
+- [Node.js](https://nodejs.org/en/docs/)
 
-> **Catatan:** Jika Anda ingin melihat contoh kode server untuk penanganan webhook, silakan cek repositori ini.
+> **Catatan:** Jika Anda ingin melihat contoh kode server untuk penanganan webhook, silakan cek repositori ini. Untuk sampel REST request, bisa langsung buka di `./http/example.http`.
