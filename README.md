@@ -7,13 +7,13 @@ WhatsApp Client adalah aplikasi yang berfungsi sebagai klien dan HTTP server unt
 
 ## Daftar Isi
 
--   [Pemasangan](#pemasangan)
--   [Penggunaan](#penggunaan)
--   [Pengaturan](#pengaturan)
--   [REST API](#rest-api)
--   [Tutorial](#tutorial)
--   [Penanganan Error](#penanganan-error)
--   [Informasi JID](#informasi-jid)
+1.  [Pemasangan](#pemasangan)
+2.  [Penggunaan](#penggunaan)
+3.  [Pengaturan](#pengaturan)
+4.  [REST API](#rest-api)
+5.  [Tutorial](#tutorial)
+6.  [Penanganan Error](#penanganan-error)
+7.  [Informasi JID](#informasi-jid)
 
 ## Pemasangan
 
@@ -52,15 +52,15 @@ WHATSAPP_AUTOSTART=false
 
 Berikut adalah contoh penggunaan REST API yang tersedia:
 
-1. [example.http](./http/example.http) - Contoh umum
-2. [whatsapp-chat.http](./http/whatsapp-chat.http) - Penanganan chat
-3. [whatsapp-group.http](./http/whatsapp-group.http) - Penanganan grup
-4. [whatsapp-message.http](./http/whatsapp-message.http) - Penanganan pesan
-5. [whatsapp-misc.http](./http/whatsapp-misc.http) - Berbagai penanganan lainnya
-6. [whatsapp-presence.http](./http/whatsapp-presence.http) - Penanganan kehadiran
-7. [whatsapp-privacy.http](./http/whatsapp-privacy.http) - Penanganan privasi
-8. [whatsapp-store.http](./http/whatsapp-store.http) - Penanganan data
-9. [whatsapp.http](./http/whatsapp.http) - Semua API
+1. **[example.http](./http/example.http)** - Contoh umum
+2. **[whatsapp-chat.http](./http/whatsapp-chat.http)** - Penanganan chat
+3. **[whatsapp-group.http](./http/whatsapp-group.http)** - Penanganan grup
+4. **[whatsapp-message.http](./http/whatsapp-message.http)** - Penanganan pesan
+5. **[whatsapp-misc.http](./http/whatsapp-misc.http)** - Berbagai penanganan lainnya
+6. **[whatsapp-presence.http](./http/whatsapp-presence.http)** - Penanganan kehadiran
+7. **[whatsapp-privacy.http](./http/whatsapp-privacy.http)** - Penanganan privasi
+8. **[whatsapp-store.http](./http/whatsapp-store.http)** - Penanganan data
+9. **[whatsapp.http](./http/whatsapp.http)** - Semua API
 
 ## Tutorial
 
@@ -180,11 +180,11 @@ Jika Anda mengalami masalah saat menggunakan aplikasi, berikut adalah beberapa e
 
 **JID (WhatsApp ID)** adalah identifikasi unik yang digunakan oleh WhatsApp untuk berbagai entitas seperti pengguna, grup, dan lainnya. Berikut adalah beberapa contoh format JID yang digunakan di WhatsApp:
 
--   **JID pengguna pribadi (chat individu)**: `xyzxyzxyzxyz@c.us` - Digunakan untuk mengidentifikasi akun WhatsApp pribadi ketika berkomunikasi melalui chat individu.
--   **JID grup WhatsApp**: `xyzxyzxyzxyz@g.us` - Digunakan untuk mengidentifikasi grup WhatsApp dalam API dan komunikasi grup.
--   **JID pengguna dalam grup**: `xyzxyzxyzxyz@lid` - Digunakan untuk mengidentifikasi pengguna tertentu di dalam grup WhatsApp.
--   **JID WhatsApp newsletter**: `xyzxyzxyzxyz@newsletter` - Digunakan untuk entitas yang digunakan oleh WhatsApp atau saluran tertentu yang menggunakan fitur newsletter resmi.
--   **JID pengguna untuk broadcast**: `62123456789@broadcast` - Digunakan untuk mengidentifikasi penerima dalam siaran broadcast.
--   **JID pengguna individu**: `62123456789@s.whatsapp.net` - Digunakan untuk mengidentifikasi pengguna melalui nomor telepon di jaringan WhatsApp.
--   **JID untuk panggilan**: `62123456789@call` - Digunakan untuk mengidentifikasi akun pengguna dalam konteks panggilan di WhatsApp.
--   **JID status WhatsApp**: `status@broadcast` - Digunakan untuk melihat dan mengidentifikasi status WhatsApp.
+1.  **JID pengguna pribadi (chat individu)**: `xyzxyzxyzxyz@c.us` - Digunakan untuk mengidentifikasi akun WhatsApp pribadi ketika berkomunikasi melalui chat individu.
+2.  **JID grup WhatsApp**: `xyzxyzxyzxyz@g.us` - Digunakan untuk mengidentifikasi grup WhatsApp dalam API dan komunikasi grup.
+3.  **JID pengguna dalam grup**: `xyzxyzxyzxyz@lid` - Digunakan untuk mengidentifikasi pengguna tertentu di dalam grup WhatsApp.
+4.  **JID WhatsApp newsletter**: `xyzxyzxyzxyz@newsletter` - Digunakan untuk entitas yang digunakan oleh WhatsApp atau saluran tertentu yang menggunakan fitur newsletter resmi.
+5.  **JID pengguna untuk broadcast**: `62123456789@broadcast` - Digunakan untuk mengidentifikasi penerima dalam siaran broadcast.
+6.  **JID pengguna individu**: `62123456789@s.whatsapp.net` - Digunakan untuk mengidentifikasi pengguna melalui nomor telepon di jaringan WhatsApp.
+7.  **JID untuk panggilan**: `62123456789@call` - Digunakan untuk mengidentifikasi akun pengguna dalam konteks panggilan di WhatsApp.
+8.  **JID status WhatsApp**: `status@broadcast` - Digunakan untuk melihat dan mengidentifikasi status WhatsApp.
