@@ -89,47 +89,6 @@ app.post("/:_id/stop", async (req, res, next) => {
 });
 
 app.post("/:_id/sendMessage", async (req, res, next) => {
-    // mengirim pesan, seolah-olah sedang mengetik
-
-    await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/presenceSubscribe", {
-        params: req.params,
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify({
-            toJid: req.body.jid,
-        }),
-    });
-
-    await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/sendPresenceUpdate", {
-        params: req.params,
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify({
-            type: "composing",
-            toJid: req.body.jid,
-        }),
-    });
-
-    await new Promise((resolve) => setTimeout(resolve, 1000 * 3)); // delay mengetik 3detik
-
-    await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/sendPresenceUpdate", {
-        params: req.params,
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify({
-            type: "paused",
-            toJid: req.body.jid,
-        }),
-    });
-
-    await new Promise((resolve) => setTimeout(resolve, 1000 * 2)); // delay sebelum kirim 2detik
-
     const response = await fetch("http://127.0.0.1:2000/api/whatsapp/:_id/sendMessage", {
         params: req.params,
         method: "POST",
@@ -144,6 +103,6 @@ app.post("/:_id/sendMessage", async (req, res, next) => {
     res.json(json);
 });
 
-const server = app.listen(3000, "0.0.0.0", () => {
+const server = app.listen(2001, "0.0.0.0", () => {
     console.log(server.address());
 });
