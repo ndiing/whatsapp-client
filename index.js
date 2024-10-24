@@ -6,7 +6,7 @@ const fetch = require("@ndiinginc/fetch");
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
 
 app.post("/:_id/webhook", (req, res, next) => {
     try {

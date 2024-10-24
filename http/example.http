@@ -16,7 +16,7 @@ POST http://127.0.0.1:2001/6281938064470/sendMessage
 Content-Type: application/json
 
 {
-    "jid": "6281935155404@s.whatsapp.net",
+    "jid": "6281953656221@s.whatsapp.net",
     "content": {
         "text": "Kirim pesan"
     }
