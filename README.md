@@ -17,8 +17,8 @@
 1. Download versi terbaru dari [WhatsApp Client Releases](https://github.com/ndiing/whatsapp-client/releases).
 2. Setelah selesai download, install aplikasi sesuai sistem operasi Anda.
     - Untuk Windows: Jalankan file `.exe`.
-    - Untuk Mac: Ekstrak dan jalankan file `.dmg` atau `.pkg`.
-    - Untuk Linux: Gunakan file `.deb` atau `.AppImage`.
+    - ~~Untuk Mac: Ekstrak dan jalankan file `.dmg` atau `.pkg`.~~
+    - ~~Untuk Linux: Gunakan file `.deb` atau `.AppImage`.~~
 
 ## Penggunaan Aplikasi
 
