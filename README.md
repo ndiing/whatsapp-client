@@ -33,13 +33,13 @@ Berikut cara dasar penggunaan aplikasi:
 
 ## Pengaturan
 
-Untuk mengatur variabel lingkungan (env), buka jendela run (Windows + R) dan ketik `%appdata%/whatsapp-client`, lalu buka file `.env`. Berikut adalah nilai defaultnya:
+Untuk mengatur variabel lingkungan (env), buka jendela run (Windows + R) dan ketik `%appdata%/WhatsApp Client`, lalu buka file `.env`. Berikut adalah nilai defaultnya:
 
 ```bash
 HTTP_PORT=2000
 HTTPS_PORT=0
 HOSTNAME=localhost
-WHATSAPP_WEBHOOK=http://localhost:3000/:_id/webhook
+WHATSAPP_WEBHOOK=http://localhost:2001/:_id/webhook
 WHATSAPP_AUTOSTART=false
 ```
 
