@@ -1,22 +1,22 @@
 ###
-POST http://127.0.0.1:2001/{{_id}}/start 
+POST http://127.0.0.1:2001/6281938064470/start 
 Content-Type: application/json
 
 {}
 
 ###
-POST http://127.0.0.1:2001/{{_id}}/stop 
+POST http://127.0.0.1:2001/6281938064470/stop 
 Content-Type: application/json
 
 {}
 
 
 ### Kirim pesan teks sederhana!
-POST http://127.0.0.1:2001/{{_id}}/sendMessage 
+POST http://127.0.0.1:2001/6281938064470/sendMessage 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "content": {
         "text": "Kirim pesan"
     }
