@@ -3,14 +3,14 @@ process.on("unhandledRejection", console.log);
 
 const express = require("express");
 const fetch = require("@ndiinginc/fetch");
+const { body } = require("./middleware/index.js");
 
 const app = express();
 
-app.use(express.json({ limit: '50mb' }));
+app.use(body());
 
 app.post("/:_id/webhook", (req, res, next) => {
     try {
-
         // console.log(req.body)
 
         if (req.body["connection.update"]) {
