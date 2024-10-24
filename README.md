@@ -50,17 +50,17 @@ WHATSAPP_AUTOSTART=false
 
 ## Persiapan Sebelum Memulai
 
-1. **Atur Webhook**: Pastikan untuk mengatur URL webhook pada `.env` file:
-    <pre>
-    WHATSAPP_WEBHOOK=http://127.0.0.1:2001/:_id/webhook
-    </pre>
-2. **Langsung Coba**: Jika ingin mencoba aplikasi langsung tanpa instalasi desktop, Anda bisa clone repo:
-    <pre>
-    git clone https://github.com/ndiing/whatsapp-client
-    npm install
-    npm start
-    </pre>
-    Pastikan Node.js sudah terinstall.
+1. **Atur Webhook**: Pastikan untuk mengatur URL webhook pada file `.env`:
+   <pre>
+   WHATSAPP_WEBHOOK=http://127.0.0.1:2001/:_id/webhook
+   </pre>
+2. **Contoh Penanganan Login dan Pesan**: Jika Anda ingin mencoba penanganan login dengan QR code dan mengelola pesan, Anda perlu menjalankan aplikasi desktop sebagai gateway. Anda dapat meng-clone repo dan mengatur aplikasi dengan langkah berikut:
+   <pre>
+   git clone https://github.com/ndiing/whatsapp-client
+   npm install
+   npm start
+   </pre>
+   Pastikan Node.js sudah terinstall dan aplikasi desktop sudah dijalankan.
 
 ## Contoh REST API
 
