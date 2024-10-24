@@ -1,12 +1,12 @@
 ### Untuk membuat grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupCreate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupCreate 
 Content-Type: application/json
 
 {
     "subject": "grup",
     "participants": [
-        "{{jid}}",
-        "{{jid2}}"
+        "6281935155404@s.whatsapp.net",
+        "6281953656221@s.whatsapp.net"
     ]
 }
 
@@ -16,49 +16,49 @@ Content-Type: application/json
 
 
 ### Untuk menambah/menghapus orang ke grup atau menurunkan/menaikkan pangkat orang
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupParticipantsUpdate 
 Content-Type: application/json
 
 {
     "jid": "120363348813803535@g.us",
     "participants": [
-        "{{jid2}}"
+        "6281953656221@s.whatsapp.net"
     ],
     "action": "add"
 }
 
 ### 
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupParticipantsUpdate 
 Content-Type: application/json
 
 {
     "jid": "120363348813803535@g.us",
     "participants": [
-        "{{jid2}}"
+        "6281953656221@s.whatsapp.net"
     ],
     "action": "remove"
 }
 
 ### 
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupParticipantsUpdate 
 Content-Type: application/json
 
 {
     "jid": "120363348813803535@g.us",
     "participants": [
-        "{{jid}}"
+        "6281935155404@s.whatsapp.net"
     ],
     "action": "demote"
 }
 
 ### 
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupParticipantsUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupParticipantsUpdate 
 Content-Type: application/json
 
 {
     "jid": "120363348813803535@g.us",
     "participants": [
-        "{{jid}}"
+        "6281935155404@s.whatsapp.net"
     ],
     "action": "promote"
 }
@@ -69,7 +69,7 @@ Content-Type: application/json
 
 
 ### Untuk mengubah subjek grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateSubject 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupUpdateSubject 
 Content-Type: application/json
 
 {
@@ -78,7 +78,7 @@ Content-Type: application/json
 }
 
 ### Untuk mengubah deskripsi grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupUpdateDescription 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupUpdateDescription 
 Content-Type: application/json
 
 {
@@ -92,7 +92,7 @@ Content-Type: application/json
 
 
 ### Untuk mengubah pengaturan grup, hanya izinkan admin untuk mengirim pesan
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupSettingUpdate 
 Content-Type: application/json
 
 {
@@ -101,7 +101,7 @@ Content-Type: application/json
 }
 
 ### Izinkan semua orang untuk mengirim pesan
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupSettingUpdate 
 Content-Type: application/json
 
 {
@@ -110,7 +110,7 @@ Content-Type: application/json
 }
 
 ### Izinkan semua orang untuk mengubah pengaturan grup -- seperti foto profil, dll.
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupSettingUpdate 
 Content-Type: application/json
 
 {
@@ -119,7 +119,7 @@ Content-Type: application/json
 }
 
 ### Hanya izinkan admin untuk mengubah pengaturan grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupSettingUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupSettingUpdate 
 Content-Type: application/json
 
 {
@@ -133,7 +133,7 @@ Content-Type: application/json
 
 
 ### Untuk keluar dari grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupLeave 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupLeave 
 Content-Type: application/json
 
 {
@@ -141,7 +141,7 @@ Content-Type: application/json
 }
 
 ### Untuk mendapatkan kode undangan untuk grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupInviteCode 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupInviteCode 
 Content-Type: application/json
 
 {
@@ -149,7 +149,7 @@ Content-Type: application/json
 }
 
 ### Untuk mencabut kode undangan dalam grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRevokeInvite 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupRevokeInvite 
 Content-Type: application/json
 
 {
@@ -157,7 +157,7 @@ Content-Type: application/json
 }
 
 ### Untuk menanyakan metadata grup
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupMetadata 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupMetadata 
 Content-Type: application/json
 
 {
@@ -165,7 +165,7 @@ Content-Type: application/json
 }
 
 ### Untuk bergabung dengan grup menggunakan kode undangan
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupAcceptInvite 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupAcceptInvite 
 Content-Type: application/json
 
 {
@@ -173,7 +173,7 @@ Content-Type: application/json
 }
 
 ### Untuk mendapatkan info grup berdasarkan kode undangan
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupGetInviteInfo 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupGetInviteInfo 
 Content-Type: application/json
 
 {
@@ -181,7 +181,7 @@ Content-Type: application/json
 }
 
 # ### Untuk bergabung dengan grup menggunakan groupInviteMessage
-# POST http://localhost:2000/api/whatsapp/{{_id}}/groupAcceptInviteV4 
+# POST http://localhost:2000/api/whatsapp/6281938064470/groupAcceptInviteV4 
 # Content-Type: application/json
 
 # {
@@ -189,7 +189,7 @@ Content-Type: application/json
 # }
 
 ### Untuk mendapatkan daftar permintaan bergabung
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsList 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupRequestParticipantsList 
 Content-Type: application/json
 
 {
@@ -202,7 +202,7 @@ Content-Type: application/json
 
 
 ### Untuk menyetujui/menggagalkan permintaan bergabung
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupRequestParticipantsUpdate 
 Content-Type: application/json
 
 {
@@ -215,7 +215,7 @@ Content-Type: application/json
 
 
 ### Untuk menyetujui/menggagalkan permintaan bergabung
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRequestParticipantsUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupRequestParticipantsUpdate 
 Content-Type: application/json
 
 {

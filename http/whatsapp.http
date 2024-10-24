@@ -1,11 +1,11 @@
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/start 
+POST http://localhost:2000/api/whatsapp/6281938064470/start 
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/stop 
+POST http://localhost:2000/api/whatsapp/6281938064470/stop 
 Content-Type: application/json
 
 {}
@@ -16,7 +16,7 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/logout 
+POST http://localhost:2000/api/whatsapp/6281938064470/logout 
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/end 
+POST http://localhost:2000/api/whatsapp/6281938064470/end 
 Content-Type: application/json
 
 {
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/query 
+POST http://localhost:2000/api/whatsapp/6281938064470/query 
 Content-Type: application/json
 
 {
@@ -46,13 +46,13 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/waitForSocketOpen 
+POST http://localhost:2000/api/whatsapp/6281938064470/waitForSocketOpen 
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendNode 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendNode 
 Content-Type: application/json
 
 {
@@ -60,7 +60,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/onUnexpectedError 
+POST http://localhost:2000/api/whatsapp/6281938064470/onUnexpectedError 
 Content-Type: application/json
 
 {
@@ -69,7 +69,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/uploadPreKeys 
+POST http://localhost:2000/api/whatsapp/6281938064470/uploadPreKeys 
 Content-Type: application/json
 
 {
@@ -77,13 +77,13 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/uploadPreKeysToServerIfRequired 
+POST http://localhost:2000/api/whatsapp/6281938064470/uploadPreKeysToServerIfRequired 
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/requestPairingCode 
+POST http://localhost:2000/api/whatsapp/6281938064470/requestPairingCode 
 Content-Type: application/json
 
 {
@@ -91,7 +91,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/waitForConnectionUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/waitForConnectionUpdate 
 Content-Type: application/json
 
 {
@@ -100,7 +100,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendWAMBuffer 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendWAMBuffer 
 Content-Type: application/json
 
 {
@@ -108,7 +108,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/appPatch 
+POST http://localhost:2000/api/whatsapp/6281938064470/appPatch 
 Content-Type: application/json
 
 {
@@ -116,13 +116,13 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/fetchBlocklist 
+POST http://localhost:2000/api/whatsapp/6281938064470/fetchBlocklist 
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateCallPrivacy 
+POST http://localhost:2000/api/whatsapp/6281938064470/updateCallPrivacy 
 Content-Type: application/json
 
 {
@@ -130,7 +130,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/resyncAppState 
+POST http://localhost:2000/api/whatsapp/6281938064470/resyncAppState 
 Content-Type: application/json
 
 {
@@ -138,7 +138,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/cleanDirtyBits 
+POST http://localhost:2000/api/whatsapp/6281938064470/cleanDirtyBits 
 Content-Type: application/json
 
 {
@@ -147,44 +147,44 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/addLabel 
+POST http://localhost:2000/api/whatsapp/6281938064470/addLabel 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "labels": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/addChatLabel 
+POST http://localhost:2000/api/whatsapp/6281938064470/addChatLabel 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "labelId": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/removeChatLabel 
+POST http://localhost:2000/api/whatsapp/6281938064470/removeChatLabel 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "labelId": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/star 
+POST http://localhost:2000/api/whatsapp/6281938064470/star 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "messages": "",
     "star": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupRevokeInviteV4 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupRevokeInviteV4 
 Content-Type: application/json
 
 {
@@ -193,68 +193,68 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupToggleEphemeral 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupToggleEphemeral 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "ephemeralExpiration": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupMemberAddMode 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupMemberAddMode 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "mode": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupJoinApprovalMode 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupJoinApprovalMode 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "mode": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/groupFetchAllParticipating 
+POST http://localhost:2000/api/whatsapp/6281938064470/groupFetchAllParticipating 
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/getPrivacyTokens 
+POST http://localhost:2000/api/whatsapp/6281938064470/getPrivacyTokens 
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}"
+    "jids": "6281935155404@s.whatsapp.net"
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/assertSessions 
+POST http://localhost:2000/api/whatsapp/6281938064470/assertSessions 
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}",
+    "jids": "6281935155404@s.whatsapp.net",
     "force": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendReceipt 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendReceipt 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "participant": "",
     "messageIds": "",
     "type": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendReceipts 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendReceipts 
 Content-Type: application/json
 
 {
@@ -263,7 +263,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/refreshMediaConn 
+POST http://localhost:2000/api/whatsapp/6281938064470/refreshMediaConn 
 Content-Type: application/json
 
 {
@@ -271,7 +271,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/waUploadToServer 
+POST http://localhost:2000/api/whatsapp/6281938064470/waUploadToServer 
 Content-Type: application/json
 
 {
@@ -279,27 +279,27 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/createParticipantNodes 
+POST http://localhost:2000/api/whatsapp/6281938064470/createParticipantNodes 
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}",
+    "jids": "6281935155404@s.whatsapp.net",
     "message": "",
     "extraAttrs": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/getUSyncDevices 
+POST http://localhost:2000/api/whatsapp/6281938064470/getUSyncDevices 
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}",
+    "jids": "6281935155404@s.whatsapp.net",
     "useCache": "",
     "ignoreZeroDevices": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendRetryRequest 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendRetryRequest 
 Content-Type: application/json
 
 {
@@ -308,7 +308,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/rejectCall 
+POST http://localhost:2000/api/whatsapp/6281938064470/rejectCall 
 Content-Type: application/json
 
 {
@@ -317,7 +317,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/requestPlaceholderResend 
+POST http://localhost:2000/api/whatsapp/6281938064470/requestPlaceholderResend 
 Content-Type: application/json
 
 {
@@ -325,7 +325,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/getOrderDetails 
+POST http://localhost:2000/api/whatsapp/6281938064470/getOrderDetails 
 Content-Type: application/json
 
 {
@@ -334,7 +334,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/getCatalog 
+POST http://localhost:2000/api/whatsapp/6281938064470/getCatalog 
 Content-Type: application/json
 
 {
@@ -342,16 +342,16 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/getCollections 
+POST http://localhost:2000/api/whatsapp/6281938064470/getCollections 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "limit": ""
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/productCreate 
+POST http://localhost:2000/api/whatsapp/6281938064470/productCreate 
 Content-Type: application/json
 
 {
@@ -359,7 +359,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/productDelete 
+POST http://localhost:2000/api/whatsapp/6281938064470/productDelete 
 Content-Type: application/json
 
 {
@@ -367,7 +367,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/productUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/productUpdate 
 Content-Type: application/json
 
 {
@@ -376,7 +376,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/register 
+POST http://localhost:2000/api/whatsapp/6281938064470/register 
 Content-Type: application/json
 
 {
@@ -384,7 +384,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:2000/api/whatsapp/{{_id}}/requestRegistrationCode 
+POST http://localhost:2000/api/whatsapp/6281938064470/requestRegistrationCode 
 Content-Type: application/json
 
 {

@@ -1,23 +1,23 @@
 ### Untuk memeriksa apakah ID yang diberikan ada di WhatsApp
-POST http://localhost:2000/api/whatsapp/{{_id}}/onWhatsApp 
+POST http://localhost:2000/api/whatsapp/6281938064470/onWhatsApp 
 Content-Type: application/json
 
 {
-    "jids": "{{jid}}"
+    "jids": "6281935155404@s.whatsapp.net"
 }
 
 
 ### Untuk mendapatkan status seseorang
-POST http://localhost:2000/api/whatsapp/{{_id}}/fetchStatus 
+POST http://localhost:2000/api/whatsapp/6281938064470/fetchStatus 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 
 ### Untuk mengubah status profil Anda
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileStatus 
+POST http://localhost:2000/api/whatsapp/6281938064470/updateProfileStatus 
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 
 
 ### Untuk mengubah nama profil Anda
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfileName 
+POST http://localhost:2000/api/whatsapp/6281938064470/updateProfileName 
 Content-Type: application/json
 
 {
@@ -35,67 +35,67 @@ Content-Type: application/json
 
 
 ### Untuk mendapatkan foto profil seseorang/kelompok, untuk gambar resolusi rendah
-POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl 
+POST http://localhost:2000/api/whatsapp/6281938064470/profilePictureUrl 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 
 ### Untuk gambar resolusi tinggi
-POST http://localhost:2000/api/whatsapp/{{_id}}/profilePictureUrl 
+POST http://localhost:2000/api/whatsapp/6281938064470/profilePictureUrl 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "type": "image"
 }
 
 
 ### Untuk mengubah foto profil Anda atau kelompok
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateProfilePicture 
+POST http://localhost:2000/api/whatsapp/6281938064470/updateProfilePicture 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}",
+    "jid": "6281935155404@s.whatsapp.net",
     "content": { "url": "./content.jpeg" }
 }
 
 
 ### Untuk menghapus foto profil Anda atau kelompok
-POST http://localhost:2000/api/whatsapp/{{_id}}/removeProfilePicture 
+POST http://localhost:2000/api/whatsapp/6281938064470/removeProfilePicture 
 Content-Type: application/json
 
 {
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 
 ### Untuk memblokir atau membuka blokir pengguna
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateBlockStatus 
+POST http://localhost:2000/api/whatsapp/6281938064470/updateBlockStatus 
 Content-Type: application/json
 
 {
-    "jid": "{{jid2}}",
+    "jid": "6281953656221@s.whatsapp.net",
     "action": "block"
 }
 
 
 ### Untuk membuka blokir pengguna
-POST http://localhost:2000/api/whatsapp/{{_id}}/updateBlockStatus 
+POST http://localhost:2000/api/whatsapp/6281938064470/updateBlockStatus 
 Content-Type: application/json
 
 {
-    "jid": "{{jid2}}",
+    "jid": "6281953656221@s.whatsapp.net",
     "action": "unblock"
 }
 
 
 ### Untuk mendapatkan profil bisnis, seperti deskripsi atau kategori
-POST http://localhost:2000/api/whatsapp/{{_id}}/getBusinessProfile 
+POST http://localhost:2000/api/whatsapp/6281938064470/getBusinessProfile 
 Content-Type: application/json
 
 {
-    "jid": "{{jid2}}"
+    "jid": "6281953656221@s.whatsapp.net"
 }

@@ -1,5 +1,5 @@
 ### Mengarsipkan chat
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
@@ -28,33 +28,33 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Membisukan/menonaktifkan bisu chat
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
     "mod": {
         "mute": 28800000
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Menonaktifkan bisu chat
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
     "mod": {
         "mute": null
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Menandai chat sudah/belum dibaca
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
@@ -83,11 +83,11 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Menandai chat belum dibaca
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
@@ -116,11 +116,11 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Menghapus pesan untuk saya
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
@@ -135,11 +135,11 @@ Content-Type: application/json
             ]
         }
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Menghapus chat
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
@@ -167,33 +167,33 @@ Content-Type: application/json
             }
         ]
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Menyematkan/melepas chat
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
     "mod": {
         "pin":true
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Melepas chat
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
     "mod": {
         "pin":false
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Menandai/membatalkan bintang pada pesan
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
@@ -210,11 +210,11 @@ Content-Type: application/json
              "star": true
         }
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }
 
 ### Membatalkan bintang pada pesan
-POST http://localhost:2000/api/whatsapp/{{_id}}/chatModify 
+POST http://localhost:2000/api/whatsapp/6281938064470/chatModify 
 Content-Type: application/json
 
 {
@@ -231,5 +231,5 @@ Content-Type: application/json
             "star": false
         }
     },
-    "jid": "{{jid}}"
+    "jid": "6281935155404@s.whatsapp.net"
 }

@@ -1,9 +1,9 @@
 ### Untuk mendapatkan keberadaan seseorang (apakah mereka mengetik atau online)
-POST http://localhost:2000/api/whatsapp/{{_id}}/presenceSubscribe 
+POST http://localhost:2000/api/whatsapp/6281938064470/presenceSubscribe 
 Content-Type: application/json
 
 {
-    "toJid": "{{jid}}"
+    "toJid": "6281935155404@s.whatsapp.net"
 }
 
 
@@ -12,46 +12,46 @@ Content-Type: application/json
 
 
 ### Ini memberi tahu orang/grup dengan ID apakah Anda online, offline, mengetik, dll.
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendPresenceUpdate 
 Content-Type: application/json
 
 {
     "type": "unavailable",
-    "toJid": "{{jid}}"
+    "toJid": "6281935155404@s.whatsapp.net"
 }
 
 ### Perbarui keberadaan menjadi tersedia
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendPresenceUpdate 
 Content-Type: application/json
 
 {
     "type": "available",
-    "toJid": "{{jid}}"
+    "toJid": "6281935155404@s.whatsapp.net"
 }
 
 ### Perbarui keberadaan menjadi sedang mengetik
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendPresenceUpdate 
 Content-Type: application/json
 
 {
     "type": "composing",
-    "toJid": "{{jid}}"
+    "toJid": "6281935155404@s.whatsapp.net"
 }
 
 ### Perbarui keberadaan menjadi sedang merekam
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendPresenceUpdate 
 Content-Type: application/json
 
 {
     "type": "recording",
-    "toJid": "{{jid}}"
+    "toJid": "6281935155404@s.whatsapp.net"
 }
 
 ### Perbarui keberadaan menjadi terjeda
-POST http://localhost:2000/api/whatsapp/{{_id}}/sendPresenceUpdate 
+POST http://localhost:2000/api/whatsapp/6281938064470/sendPresenceUpdate 
 Content-Type: application/json
 
 {
     "type": "paused",
-    "toJid": "{{jid}}"
+    "toJid": "6281935155404@s.whatsapp.net"
 }
